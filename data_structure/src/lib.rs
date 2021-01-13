@@ -1,3 +1,5 @@
+
+
 #[cfg(test)]
 mod tests {
     #[test]
@@ -7,4 +9,5 @@ mod tests {
 }
 
 pub mod list_node;
+pub mod tree;
 pub mod union_find;
