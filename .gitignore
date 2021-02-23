@@ -1,6 +1,3 @@
 /target
 Cargo.lock
-/.idea/leetcode.iml
-/.idea/workspace.xml
-/.idea/vcs.xml
-/.idea/modules.xml
+/.idea
