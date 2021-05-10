@@ -1,9 +1,17 @@
 
+mod topic_1047;
 mod topic_1052;
 
 #[cfg(test)]
 mod tests {
+    use crate::topic_1047::remove_duplicates;
     use crate::topic_1052::max_satisfied;
+
+    #[test]
+    fn solution_1047() {
+        let s = "addadssd".to_string();
+        println!("{}", remove_duplicates(s));
+    }
 
     #[test]
     fn solution_1052() {

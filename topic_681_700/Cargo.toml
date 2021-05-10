@@ -8,3 +8,4 @@ edition = "2018"
 
 [dependencies]
 data_structure = {path = "/Users/frankstan/CLionProjects/github/leetcode_rust/data_structure"}
+trace = "*"

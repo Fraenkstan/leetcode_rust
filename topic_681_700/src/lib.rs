@@ -2,6 +2,8 @@
 mod topic_684;
 mod topic_697;
 
+extern crate trace;
+
 #[cfg(test)]
 mod tests {
 
@@ -17,8 +19,8 @@ mod tests {
     #[test]
     fn solution_697() {
         let nums = vec![1,2,2,3,1,4,2];
-        println!(find_shortest_sub_array(nums));
+        println!("{}", find_shortest_sub_array(nums));
         let nums = vec![1, 2, 2, 3, 1];
-        println!(find_shortest_sub_array(nums));
+        println!("{}", find_shortest_sub_array(nums));
     }
 }
