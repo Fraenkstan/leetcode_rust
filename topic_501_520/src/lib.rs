@@ -1,10 +1,13 @@
 
 mod topic_503;
+mod topic_518;
 
 #[cfg(test)]
 mod tests {
+    use crate::topic_518::change;
+
     #[test]
-    fn it_works() {
-        assert_eq!(2 + 2, 4);
+    fn solution_518() {
+        println!("{}", change(5, vec![1, 2, 5]));
     }
 }

@@ -1,5 +1,6 @@
 
 mod topic_372;
+mod topic_374;
 
 #[cfg(test)]
 mod tests {

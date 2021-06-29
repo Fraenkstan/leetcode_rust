@@ -1,11 +1,13 @@
 
 mod topic_766;
+mod topic_773;
 mod topic_778;
 
 #[cfg(test)]
 mod tests {
 
     use crate::topic_766::is_toeplitz_matrix;
+    use crate::topic_773::sliding_puzzle;
     use crate::topic_778::swim_in_water;
 
     #[test]
