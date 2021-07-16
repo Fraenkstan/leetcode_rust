@@ -1,4 +1,5 @@
 
+mod topic_22;
 mod topic_26;
 mod topic_27;
 mod topic_31;
@@ -12,6 +13,7 @@ mod topic_40;
 #[cfg(test)]
 mod tests {
 
+    use crate::topic_22::generate_parenthesis;
     use crate::topic_26::{remove_duplicates, remove_duplicates_1};
     use crate::topic_27::remove_element;
     use crate::topic_31::next_permutation;
@@ -21,6 +23,12 @@ mod tests {
     use crate::topic_36::is_valid_sudoku;
     use crate::topic_39::combination_sum;
     use crate::topic_40::combination_sum2;
+
+    #[test]
+    fn solution_22() {
+        println!("{:?}", generate_parenthesis(1));
+        println!("{:?}", generate_parenthesis(3));
+    }
 
     #[test]
     fn solution_26() {
