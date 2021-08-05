@@ -4,6 +4,7 @@ pub struct KthLargest {
     heap_maxsize:   usize,
 }
 
+#[allow(unused)]
 impl KthLargest {
 
     pub fn new(k: i32, nums: Vec<i32>) -> Self {

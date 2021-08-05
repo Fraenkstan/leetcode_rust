@@ -1,16 +1,22 @@
 
+mod topic_802;
 mod topic_803;
+mod topic_804;
 mod topic_815;
 
 #[cfg(test)]
 mod tests {
 
+    use crate::topic_802::eventual_safe_nodes;
     // use crate::topic_803::hit_bricks;
+    use crate::topic_804::unique_morse_representations;
     use crate::topic_815::num_buses_to_destination;
 
     #[test]
-    fn it_works() {
-        assert_eq!(2 + 2, 4);
+    fn solution_802() {
+        println!("{:?}", eventual_safe_nodes(vec![vec![1,2], vec![2,3], vec![5], vec![0],
+                                                    vec![5], vec![], vec![]]));
+        println!("{:?}", eventual_safe_nodes(vec![vec![1,2,3,4], vec![1,2], vec![3,4], vec![0,4], vec![]]));
     }
 
     #[test]
@@ -18,6 +24,12 @@ mod tests {
         // let grid = vec![vec![1,0,0,0],vec![1,1,1,0]];
         // let hits = vec![vec![1,0]];
         // println!("{:?}", hit_bricks(grid, hits));
+    }
+
+    #[test]
+    fn solution_804() {
+        println!("{}", unique_morse_representations(vec!["gin".to_string(), "zen".to_string(),
+                                                                "gig".to_string(), "msg".to_string()]))
     }
 
     #[test]
