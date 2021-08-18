@@ -1,9 +1,17 @@
 
+mod topic_1137;
 mod topic_1138;
 
 #[cfg(test)]
 mod tests {
+    use crate::topic_1137::tribonacci;
     use crate::topic_1138::find_num_of_valid_words;
+
+    #[test]
+    fn solution_1137() {
+        println!("{}", tribonacci(4));
+        println!("{}", tribonacci(25));
+    }
 
     #[test]
     fn solution_1138() {

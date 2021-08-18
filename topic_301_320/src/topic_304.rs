@@ -1,4 +1,5 @@
 
+#[allow(unused)]
 struct NumMatrix (Vec<Vec<i32>>);
 
 
@@ -6,6 +7,7 @@ struct NumMatrix (Vec<Vec<i32>>);
  * `&self` means the method takes an immutable reference.
  * If you need a mutable reference, change it to `&mut self` instead.
  */
+#[allow(unused)]
 impl NumMatrix {
 
     fn new(mut matrix: Vec<Vec<i32>>) -> Self {
@@ -29,9 +31,3 @@ impl NumMatrix {
         else{0}
     }
 }
-
-/**
- * Your NumMatrix object will be instantiated and called as such:
- * let obj = NumMatrix::new(matrix);
- * let ret_1: i32 = obj.sum_region(row1, col1, row2, col2);
- */

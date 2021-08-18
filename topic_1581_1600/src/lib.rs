@@ -1,19 +1,24 @@
 
+mod topic_1583;
 mod topic_1584;
 mod topic_1600;
 
 #[cfg(test)]
 mod tests {
 
+    use crate::topic_1583::unhappy_friends;
     use crate::topic_1584::{min_cost_connect_points, kruskal};
     use crate::topic_1600::ThroneInheritance;
 
     #[test]
-    fn it_works() {
-        for i in 0..10 {
-            println!("{}", i);
-        }
-        assert_eq!(2 + 2, 4);
+    fn solution_1583() {
+        println!("{}", unhappy_friends(4, vec![vec![1,2,3], vec![3,2,0],
+                                               vec![3,1,0], vec![1,2,0]],
+                                       vec![vec![0,1], vec![2,3]]));
+        println!("{}", unhappy_friends(2, vec![vec![1], vec![0]], vec![vec![1,0]]));
+        println!("{}", unhappy_friends(4, vec![vec![1,3,2], vec![2,3,0],
+                                               vec![1,3,0], vec![0,2,1]],
+                                       vec![vec![1,3], vec![0,2]]));
     }
 
     #[test]
