@@ -1,9 +1,17 @@
 
+mod topic_17_09;
 mod topic_17_10;
 
 #[cfg(test)]
 mod tests {
+    use crate::topic_17_09::get_kth_magic_number;
     use crate::topic_17_10::majority_element;
+
+    #[test]
+    fn solution_17_09() {
+        println!("{}", get_kth_magic_number(5));
+        println!("{}", get_kth_magic_number(7));
+    }
 
     #[test]
     fn solution_17_10() {

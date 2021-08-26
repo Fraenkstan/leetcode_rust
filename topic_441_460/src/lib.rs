@@ -1,6 +1,7 @@
 
 mod topic_441;
 mod topic_442;
+mod topic_443;
 mod topic_446;
 mod topic_451;
 mod topic_457;
@@ -10,6 +11,7 @@ mod tests {
 
     use crate::topic_441::arrange_coins;
     use crate::topic_442::find_duplicates;
+    use crate::topic_443::compress;
     use crate::topic_446::number_of_arithmetic_slices;
     use crate::topic_451::frequency_sort;
     use crate::topic_457::circular_array_loop;
@@ -26,6 +28,13 @@ mod tests {
     #[test]
     fn solution_442() {
         println!("{:?}", find_duplicates(vec![4,3,2,7,8,2,3,1]));
+    }
+
+    #[test]
+    fn solution_443() {
+        println!("{}", compress(&mut vec!['a','a','b','b','c','c','c']));
+        println!("{}", compress(&mut vec!['a']));
+        println!("{}", compress(&mut vec!['a','b','b','b','b','b','b','b','b','b','b','b','b']));
     }
 
     #[test]

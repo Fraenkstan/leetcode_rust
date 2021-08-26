@@ -1,4 +1,5 @@
 
+mod topic_263;
 mod topic_264;
 mod topic_274;
 mod topic_275;
@@ -7,12 +8,19 @@ mod topic_279;
 
 #[cfg(test)]
 mod tests {
-
+    use crate::topic_263::is_ugly;
     use crate::topic_264::nth_ugly_number;
     use crate::topic_274::h_index;
     use crate::topic_275::h_index as h_index_2;
     use crate::topic_278::first_bad_version;
     use crate::topic_279::num_squares;
+
+    #[test]
+    fn solution_263() {
+        println!("{}", is_ugly(6));
+        println!("{}", is_ugly(8));
+        println!("{}", is_ugly(14));
+    }
 
     #[test]
     fn solution_264() {
