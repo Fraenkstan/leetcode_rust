@@ -1,10 +1,8 @@
 [package]
-name = "topic_521_540"
+name = "topic_mianshi_11"
 version = "0.1.0"
-authors = ["frankstan <0027011261@ztesoft.com>"]
 edition = "2018"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-rand = "0.3.17"

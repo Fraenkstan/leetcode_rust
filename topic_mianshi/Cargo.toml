@@ -1,2 +1,5 @@
 [workspace]
-members = ["topic_mianshi_10", "topic_mianshi_17"]
+members = ["topic_mianshi_01", "topic_mianshi_02", "topic_mianshi_03", "topic_mianshi_04", "topic_mianshi_05",
+           "topic_mianshi_06", "topic_mianshi_07", "topic_mianshi_08", "topic_mianshi_09", "topic_mianshi_10",
+           "topic_mianshi_11", "topic_mianshi_12", "topic_mianshi_13", "topic_mianshi_14", "topic_mianshi_15",
+           "topic_mianshi_16", "topic_mianshi_17"]

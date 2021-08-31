@@ -1,6 +1,7 @@
 
 mod topic_1583;
 mod topic_1584;
+mod topic_1588;
 mod topic_1600;
 
 #[cfg(test)]
@@ -8,6 +9,7 @@ mod tests {
 
     use crate::topic_1583::unhappy_friends;
     use crate::topic_1584::{min_cost_connect_points, kruskal};
+    use crate::topic_1588::sum_odd_length_subarrays;
     use crate::topic_1600::ThroneInheritance;
 
     #[test]
@@ -29,6 +31,11 @@ mod tests {
 
         //TODO: 优化版的kruskal写法失败🤢🤢🤢🤢
         println!("{}", min_cost_connect_points(points));
+    }
+
+    #[test]
+    fn solution_1588() {
+        println!("{}", sum_odd_length_subarrays(vec![1,4,2,5,3]));
     }
 
     #[test]

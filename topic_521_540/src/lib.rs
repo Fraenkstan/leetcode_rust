@@ -1,13 +1,16 @@
+extern crate rand;
 
 mod topic_523;
 mod topic_525;
 mod topic_526;
+mod topic_528;
 
 #[cfg(test)]
 mod tests {
     use crate::topic_523::check_subarray_sum;
     use crate::topic_525::find_max_length;
     use crate::topic_526::{count_arrangement, count_arrangement_backstrace};
+    use crate::topic_528::Solution;
 
     #[test]
     fn topic_523() {
@@ -29,5 +32,17 @@ mod tests {
             println!("dp result: {}", count_arrangement(i as i32));
             println!("backstrace result: {}", count_arrangement_backstrace(i as i32));
         }
+    }
+
+    #[test]
+    fn solution_528() {
+        let test = Solution::new(vec![1]);
+        println!("{}", test.pick_index());
+        let test1 = Solution::new(vec![1,3]);
+        println!("{}", test1.pick_index());
+        println!("{}", test1.pick_index());
+        println!("{}", test1.pick_index());
+        println!("{}", test1.pick_index());
+        println!("{}", test1.pick_index());
     }
 }

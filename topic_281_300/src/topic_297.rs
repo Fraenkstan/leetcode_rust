@@ -1,5 +1,4 @@
 use std::cell::RefCell;
-use std::collections::VecDeque;
 use std::rc::Rc;
 use std::str::FromStr;
 
@@ -25,6 +24,7 @@ pub(crate) struct Codec {}
 
 static NULL: &str = "#";
 
+#[allow(unused)]
 impl Codec {
     pub(crate) fn new() -> Self {
         Self {}
@@ -78,7 +78,7 @@ fn des(v: &Vec<&str>, index: &mut usize) -> Option<Rc<RefCell<TreeNode>>> {
         let mut node = new_node(v[*index]);
         *index += 1;
 
-        let mut node_ref = node.as_mut().unwrap();
+        let node_ref = node.as_mut().unwrap();
         node_ref.borrow_mut().left = des(v, index);
         node_ref.borrow_mut().right = des(v, index);
         node

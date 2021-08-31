@@ -1,11 +1,23 @@
-#![feature(refcell_take)]
+
+mod topic_295;
 mod topic_297;
 
 #[cfg(test)]
 mod tests {
-    use crate::topic_297::{Codec, TreeNode};
     use std::rc::Rc;
     use std::cell::RefCell;
+    use crate::topic_295::MedianFinder;
+    use crate::topic_297::{Codec, TreeNode};
+
+    #[test]
+    fn solution_295() {
+        let mut test = MedianFinder::new();
+        test.add_num(1);
+        test.add_num(2);
+        println!("{}", test.find_median());
+        test.add_num(3);
+        println!("{}", test.find_median());
+    }
 
     #[test]
     fn solution_297() {
