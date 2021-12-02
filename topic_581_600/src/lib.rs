@@ -1,12 +1,14 @@
 
 mod topic_581;
 mod topic_583;
+mod topic_600;
 
 #[cfg(test)]
 mod tests {
 
     use crate::topic_581::find_unsorted_subarray;
     use crate::topic_583::min_distance;
+    use crate::topic_600::find_integers;
 
     #[test]
     fn solution_581() {
@@ -25,5 +27,11 @@ mod tests {
     #[test]
     fn solution_583() {
         println!("{}", min_distance("sea".to_string(), "tea".to_string()));
+    }
+
+    #[test]
+    fn solution_600() {
+        println!("{}", find_integers(4));
+        println!("{}", find_integers(5));
     }
 }

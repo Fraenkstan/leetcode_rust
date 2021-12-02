@@ -1,6 +1,7 @@
 extern crate rand;
 
 mod topic_523;
+mod topic_524;
 mod topic_525;
 mod topic_526;
 mod topic_528;
@@ -8,6 +9,7 @@ mod topic_528;
 #[cfg(test)]
 mod tests {
     use crate::topic_523::check_subarray_sum;
+    use crate::topic_524::find_longest_word;
     use crate::topic_525::find_max_length;
     use crate::topic_526::{count_arrangement, count_arrangement_backstrace};
     use crate::topic_528::Solution;
@@ -17,6 +19,13 @@ mod tests {
         let nums = vec![23, 2, 6, 4, 7];
         let k = 13;
         println!("{}", check_subarray_sum(nums, k));
+    }
+
+    #[test]
+    fn solution_524() {
+        let dictionary = vec!["ale".to_string(), "apple".to_string(),
+                              "monkey".to_string(), "plea".to_string()];
+        println!("{}", find_longest_word("abpcplea".to_string(), dictionary));
     }
 
     #[test]
