@@ -1,10 +1,19 @@
 
+mod topic_1414;
 mod topic_1418;
 
 #[cfg(test)]
 mod tests {
 
+    use crate::topic_1414::find_min_fibonacci_numbers;
     use crate::topic_1418::display_table;
+
+    #[test]
+    fn solution_1414() {
+        println!("{}", find_min_fibonacci_numbers(7));
+        println!("{}", find_min_fibonacci_numbers(10));
+        println!("{}", find_min_fibonacci_numbers(19));
+    }
 
     #[test]
     fn solution_1418() {
