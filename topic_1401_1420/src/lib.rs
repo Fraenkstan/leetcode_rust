@@ -1,12 +1,20 @@
 
+mod topic_1405;
 mod topic_1414;
 mod topic_1418;
 
 #[cfg(test)]
 mod tests {
-
+    use crate::topic_1405::longest_diverse_string;
     use crate::topic_1414::find_min_fibonacci_numbers;
     use crate::topic_1418::display_table;
+
+    #[test]
+    fn solution_1405() {
+        println!("{}", longest_diverse_string(1,1,7));
+        println!("{}", longest_diverse_string(2,2,1));
+        println!("{}", longest_diverse_string(7,1,0));
+    }
 
     #[test]
     fn solution_1414() {
