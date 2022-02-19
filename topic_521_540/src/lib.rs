@@ -5,6 +5,7 @@ mod topic_524;
 mod topic_525;
 mod topic_526;
 mod topic_528;
+mod topic_540;
 
 #[cfg(test)]
 mod tests {
@@ -13,6 +14,7 @@ mod tests {
     use crate::topic_525::find_max_length;
     use crate::topic_526::{count_arrangement, count_arrangement_backstrace};
     use crate::topic_528::Solution;
+    use crate::topic_540::single_non_duplicate;
 
     #[test]
     fn topic_523() {
@@ -53,5 +55,11 @@ mod tests {
         println!("{}", test1.pick_index());
         println!("{}", test1.pick_index());
         println!("{}", test1.pick_index());
+    }
+
+    #[test]
+    fn solution_540() {
+        println!("{}", single_non_duplicate(vec![1,1,2,3,3,4,4,8,8]));
+        println!("{}", single_non_duplicate(vec![3,3,7,7,10,11,11]));
     }
 }

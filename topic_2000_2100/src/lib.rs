@@ -1,11 +1,20 @@
 
+mod topic_2006;
 mod topic_2013;
 mod topic_2047;
 
 #[cfg(test)]
 mod tests {
+    use crate::topic_2006::count_k_difference;
     use crate::topic_2013::DetectSquares;
     use crate::topic_2047::count_valid_words;
+
+    #[test]
+    fn solution_2006() {
+        println!("{}", count_k_difference(vec![1,2,2,1], 1));
+        println!("{}", count_k_difference(vec![1,3], 3));
+        println!("{}", count_k_difference(vec![3,2,1,5,4], 2));
+    }
 
     #[test]
     fn solution_2013() {

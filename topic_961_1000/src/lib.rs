@@ -1,5 +1,6 @@
 #![feature(refcell_take)]
 
+mod topic_969;
 mod topic_981;
 mod topic_987;
 mod topic_994;
@@ -9,9 +10,16 @@ mod tests {
 
     use std::rc::Rc;
     use std::cell::RefCell;
+    use crate::topic_969::pancake_sort;
     use crate::topic_981::TimeMap;
     use crate::topic_987::{TreeNode, vertical_traversal};
     use crate::topic_994::oranges_rotting;
+
+    #[test]
+    fn solution_969() {
+        println!("{:?}", pancake_sort(vec![3,2,4,1]));
+        println!("{:?}", pancake_sort(vec![1,2,3]));
+    }
 
     #[test]
     fn solution_981() {
