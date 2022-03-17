@@ -1,20 +1,31 @@
 extern crate rand;
 
+mod topic_521;
 mod topic_523;
 mod topic_524;
 mod topic_525;
 mod topic_526;
 mod topic_528;
+mod topic_537;
 mod topic_540;
 
 #[cfg(test)]
 mod tests {
+    use crate::topic_521::find_lu_slength;
     use crate::topic_523::check_subarray_sum;
     use crate::topic_524::find_longest_word;
     use crate::topic_525::find_max_length;
     use crate::topic_526::{count_arrangement, count_arrangement_backstrace};
     use crate::topic_528::Solution;
+    use crate::topic_537::complex_number_multiply;
     use crate::topic_540::single_non_duplicate;
+
+    #[test]
+    fn solution_521() {
+        println!("{}", find_lu_slength("aba".to_string(), "cdc".to_string()));
+        println!("{}", find_lu_slength("aaa".to_string(), "bbb".to_string()));
+        println!("{}", find_lu_slength("aaa".to_string(), "aaa".to_string()));
+    }
 
     #[test]
     fn topic_523() {
@@ -55,6 +66,12 @@ mod tests {
         println!("{}", test1.pick_index());
         println!("{}", test1.pick_index());
         println!("{}", test1.pick_index());
+    }
+
+    #[test]
+    fn solution_537() {
+        println!("{}", complex_number_multiply("1+1i".to_string(), "1+1i".to_string()));
+        println!("{}", complex_number_multiply("1+-1i".to_string(), "1+-1i".to_string()));
     }
 
     #[test]

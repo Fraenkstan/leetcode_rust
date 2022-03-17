@@ -4,6 +4,7 @@ mod topic_782;
 mod topic_787;
 mod topic_789;
 mod topic_797;
+mod topic_798;
 
 #[cfg(test)]
 mod tests {
@@ -13,6 +14,7 @@ mod tests {
     use crate::topic_787::find_cheapest_price;
     use crate::topic_789::escape_ghosts;
     use crate::topic_797::all_paths_source_target;
+    use crate::topic_798::best_rotation;
 
     #[test]
     fn solution_781() {
@@ -58,5 +60,11 @@ mod tests {
         println!("{:?}", all_paths_source_target(vec![vec![4,3,1], vec![3,2,4], vec![3], vec![4], vec![]]));
         println!("{:?}", all_paths_source_target(vec![vec![1], vec![]]));
         println!("{:?}", all_paths_source_target(vec![vec![1,2,3], vec![2], vec![3], vec![]]));
+    }
+
+    #[test]
+    fn solution_798() {
+        println!("{}", best_rotation(vec![2,3,1,4,0]));
+        println!("{}", best_rotation(vec![1,3,0,2,4]));
     }
 }
