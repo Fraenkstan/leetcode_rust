@@ -1,4 +1,3 @@
-
 pub fn wiggle_sort(nums: &mut Vec<i32>) {
     if nums.len() < 3 {
         return;

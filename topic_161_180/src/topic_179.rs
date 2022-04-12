@@ -6,5 +6,7 @@ pub fn largest_number(nums: Vec<i32>) -> String {
     if nums[0] == 0 {
         return 0.to_string();
     }
-    nums.into_iter().map(|num| num.to_string()).collect::<String>()
+    nums.into_iter()
+        .map(|num| num.to_string())
+        .collect::<String>()
 }

@@ -1,5 +1,3 @@
-
-
 pub fn compare_version(version1: String, version2: String) -> i32 {
     let mut s1 = version1.split(".").map(|s| s.parse().unwrap());
     let mut s2 = version2.split(".").map(|s| s.parse().unwrap());

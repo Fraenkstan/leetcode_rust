@@ -1,7 +1,7 @@
-
-
 pub fn get_maximum_generated(n: i32) -> i32 {
-    if n == 0 { return 0 }
+    if n == 0 {
+        return 0;
+    }
     let n = n as usize;
     let mut dp = vec![0; n + 1];
     dp[1] = 1;

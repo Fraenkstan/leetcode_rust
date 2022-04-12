@@ -1,5 +1,3 @@
-
-
 pub fn min_distance(word1: String, word2: String) -> i32 {
     let mut dp = vec![vec![i32::max_value(); word2.len() + 1]; word1.len() + 1];
     for i in 0..=word1.len() {

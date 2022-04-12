@@ -1,4 +1,3 @@
-
 mod topic_162;
 mod topic_165;
 mod topic_166;
@@ -25,17 +24,26 @@ mod tests {
 
     #[test]
     fn solution_162() {
-        println!("{}", find_peak_element(vec![1,2,3,1]));
-        println!("{}", find_peak_element(vec![1,2,1,3,5,6,4]));
+        println!("{}", find_peak_element(vec![1, 2, 3, 1]));
+        println!("{}", find_peak_element(vec![1, 2, 1, 3, 5, 6, 4]));
     }
 
     #[test]
     fn solution_165() {
-        println!("{}", compare_version("1.01".to_string(), "1.001".to_string()));
-        println!("{}", compare_version("1.0".to_string(), "1.0.0".to_string()));
+        println!(
+            "{}",
+            compare_version("1.01".to_string(), "1.001".to_string())
+        );
+        println!(
+            "{}",
+            compare_version("1.0".to_string(), "1.0.0".to_string())
+        );
         println!("{}", compare_version("0.1".to_string(), "1.1".to_string()));
         println!("{}", compare_version("1.0.1".to_string(), "1".to_string()));
-        println!("{}", compare_version("7.5.2.4".to_string(), "7.5.3".to_string()));
+        println!(
+            "{}",
+            compare_version("7.5.2.4".to_string(), "7.5.3".to_string())
+        );
     }
 
     #[test]
@@ -49,9 +57,9 @@ mod tests {
 
     #[test]
     fn solution_167() {
-        println!("{:?}", two_sum(vec![2,7,11,15], 9));
-        println!("{:?}", two_sum(vec![2,3,4], 6));
-        println!("{:?}", two_sum(vec![-1,0], -1));
+        println!("{:?}", two_sum(vec![2, 7, 11, 15], 9));
+        println!("{:?}", two_sum(vec![2, 3, 4], 6));
+        println!("{:?}", two_sum(vec![-1, 0], -1));
     }
 
     #[test]
@@ -63,8 +71,8 @@ mod tests {
 
     #[test]
     fn solution_169() {
-        println!("{}", majority_element(vec![3,2,3]));
-        println!("{}", majority_element(vec![2,2,1,1,1,2,2]));
+        println!("{}", majority_element(vec![3, 2, 3]));
+        println!("{}", majority_element(vec![2, 2, 1, 1, 1, 2, 2]));
     }
 
     #[test]
@@ -82,8 +90,8 @@ mod tests {
 
     #[test]
     fn solution_179() {
-        println!("{}", largest_number(vec![10,2]));
-        println!("{}", largest_number(vec![3,30,34,5,9]));
+        println!("{}", largest_number(vec![10, 2]));
+        println!("{}", largest_number(vec![3, 30, 34, 5, 9]));
         println!("{}", largest_number(vec![1]));
         println!("{}", largest_number(vec![10]));
     }

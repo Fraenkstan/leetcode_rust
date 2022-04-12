@@ -9,9 +9,14 @@ pub fn next_greater_element(nums1: Vec<i32>, nums2: Vec<i32>) -> Vec<i32> {
         }
         if j == nums2.len() {
             map.insert(nums2[i], -1);
-        } else { map.insert(nums2[i], nums2[j]); }
+        } else {
+            map.insert(nums2[i], nums2[j]);
+        }
     }
-    nums1.iter().map(|num| *map.get(num).unwrap_or(&-1)).collect()
+    nums1
+        .iter()
+        .map(|num| *map.get(num).unwrap_or(&-1))
+        .collect()
 }
 
 pub fn next_greater_element1(nums1: Vec<i32>, nums2: Vec<i32>) -> Vec<i32> {
@@ -21,14 +26,27 @@ pub fn next_greater_element1(nums1: Vec<i32>, nums2: Vec<i32>) -> Vec<i32> {
         while !stack.is_empty() && nums2[i] >= *stack.last().unwrap() {
             stack.pop();
         }
-        map.insert(nums2[i], if stack.is_empty() { -1 } else { *stack.last().unwrap() });
+        map.insert(
+            nums2[i],
+            if stack.is_empty() {
+                -1
+            } else {
+                *stack.last().unwrap()
+            },
+        );
         stack.push(nums2[i]);
     }
-    nums1.iter().map(|num| *map.get(num).unwrap_or(&-1)).collect()
+    nums1
+        .iter()
+        .map(|num| *map.get(num).unwrap_or(&-1))
+        .collect()
 }
 
 #[test]
 fn topic_496() {
-    println!("{:?}", next_greater_element1(vec![4,1,2], vec![1,3,4,2]));
-    println!("{:?}", next_greater_element1(vec![2,4], vec![1,2,3,4]));
+    println!(
+        "{:?}",
+        next_greater_element1(vec![4, 1, 2], vec![1, 3, 4, 2])
+    );
+    println!("{:?}", next_greater_element1(vec![2, 4], vec![1, 2, 3, 4]));
 }

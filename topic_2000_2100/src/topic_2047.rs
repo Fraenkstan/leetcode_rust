@@ -1,7 +1,8 @@
-
 pub fn count_valid_words(sentence: String) -> i32 {
     let words = sentence.split_whitespace().collect::<Vec<_>>();
-    words.iter().fold(0, |acc, &word| acc + if is_valid(word) { 1 } else { 0 })
+    words
+        .iter()
+        .fold(0, |acc, &word| acc + if is_valid(word) { 1 } else { 0 })
 }
 
 fn is_valid(word: &str) -> bool {
@@ -14,7 +15,12 @@ fn is_valid(word: &str) -> bool {
         }
         match c {
             '-' => {
-                if flag || i == 0 || i == len - 1 || !chars[i - 1].is_alphabetic() || !chars[i + 1].is_alphabetic() {
+                if flag
+                    || i == 0
+                    || i == len - 1
+                    || !chars[i - 1].is_alphabetic()
+                    || !chars[i + 1].is_alphabetic()
+                {
                     return false;
                 }
                 flag = true;
@@ -24,7 +30,7 @@ fn is_valid(word: &str) -> bool {
                     return false;
                 }
             }
-             _ => {}
+            _ => {}
         }
     }
     true

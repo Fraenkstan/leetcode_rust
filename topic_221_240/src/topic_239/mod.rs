@@ -1,8 +1,8 @@
 use std::collections::VecDeque;
 
 pub fn max_sliding_window(nums: Vec<i32>, k: i32) -> Vec<i32> {
-    let mut result: Vec<i32> = vec!();
-    if nums.len() == 0 || k == 0 || k > (nums.len() as i32){
+    let mut result: Vec<i32> = vec![];
+    if nums.len() == 0 || k == 0 || k > (nums.len() as i32) {
         return result;
     }
     let mut queue: VecDeque<i32> = VecDeque::new();
@@ -20,11 +20,11 @@ pub fn max_sliding_window(nums: Vec<i32>, k: i32) -> Vec<i32> {
         queue.push_back(i);
 
         //当前队首是否过期
-        if *queue.front().unwrap() == i-k {
+        if *queue.front().unwrap() == i - k {
             queue.pop_front();
         }
         //add当前滑动窗口的最大值
-        if i >= k-1 {
+        if i >= k - 1 {
             result.push(nums[*queue.front().unwrap() as usize]);
         }
     }

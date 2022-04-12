@@ -1,5 +1,5 @@
-use std::collections::HashMap;
 use std::borrow::Borrow;
+use std::collections::HashMap;
 
 pub fn fraction_to_decimal(numerator: i32, denominator: i32) -> String {
     //转换为 i64类型 防止溢出
@@ -35,7 +35,9 @@ pub fn fraction_to_decimal(numerator: i32, denominator: i32) -> String {
         if i == 0 {
             res += (quotient.to_string() + ".").as_ref();
             i += 1;
-        } else { res += quotient.to_string().as_ref() }
+        } else {
+            res += quotient.to_string().as_ref()
+        }
         if recoder.contains_key(remainder.borrow()) {
             let index = recoder.get(remainder.borrow()).unwrap();
             if remainder == 0 {

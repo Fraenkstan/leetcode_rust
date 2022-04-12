@@ -25,7 +25,7 @@ pub fn count_of_atoms(formula: String) -> String {
                 for (name, count) in top {
                     *m.entry(name).or_insert(0) += count * number;
                 }
-            },
+            }
             _ => {
                 // parse atom name
                 let start = i + 1;

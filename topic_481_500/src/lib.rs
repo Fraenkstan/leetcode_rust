@@ -1,4 +1,3 @@
-
 mod topic_483;
 mod topic_494;
 mod topic_496;
@@ -28,7 +27,10 @@ mod tests {
 
     #[test]
     fn topic_496() {
-        println!("{:?}", next_greater_element(vec![4,1,2], vec![1,3,4,2]));
-        println!("{:?}", next_greater_element(vec![2,4], vec![1,2,3,4]));
+        println!(
+            "{:?}",
+            next_greater_element(vec![4, 1, 2], vec![1, 3, 4, 2])
+        );
+        println!("{:?}", next_greater_element(vec![2, 4], vec![1, 2, 3, 4]));
     }
 }

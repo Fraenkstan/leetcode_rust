@@ -21,11 +21,10 @@ impl TreeNode {
 
 struct BSTIterator {
     expanded: Vec<i32>,
-    counter: usize
+    counter: usize,
 }
 
 impl BSTIterator {
-
     fn new(root: Option<Rc<RefCell<TreeNode>>>) -> Self {
         let mut v = vec![];
         expand_tree(&mut v, root);

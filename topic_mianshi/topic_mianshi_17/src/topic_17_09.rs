@@ -1,6 +1,3 @@
-
-
-
 pub fn get_kth_magic_number(k: i32) -> i32 {
     let mut dp = vec![1; k as usize + 1];
     dp[0] = 1;

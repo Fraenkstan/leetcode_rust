@@ -1,5 +1,3 @@
-
-
 pub fn ways_to_change(n: i32) -> i32 {
     let mut dp = vec![0; n.max(25) as usize + 1];
     dp[0] = 1;

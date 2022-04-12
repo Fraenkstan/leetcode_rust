@@ -1,4 +1,3 @@
-
 mod topic_441;
 mod topic_442;
 mod topic_443;
@@ -27,19 +26,24 @@ mod tests {
 
     #[test]
     fn solution_442() {
-        println!("{:?}", find_duplicates(vec![4,3,2,7,8,2,3,1]));
+        println!("{:?}", find_duplicates(vec![4, 3, 2, 7, 8, 2, 3, 1]));
     }
 
     #[test]
     fn solution_443() {
-        println!("{}", compress(&mut vec!['a','a','b','b','c','c','c']));
+        println!("{}", compress(&mut vec!['a', 'a', 'b', 'b', 'c', 'c', 'c']));
         println!("{}", compress(&mut vec!['a']));
-        println!("{}", compress(&mut vec!['a','b','b','b','b','b','b','b','b','b','b','b','b']));
+        println!(
+            "{}",
+            compress(&mut vec![
+                'a', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b'
+            ])
+        );
     }
 
     #[test]
     fn solution_446() {
-        println!("{}", number_of_arithmetic_slices(vec![2,4,6,8,10]));
+        println!("{}", number_of_arithmetic_slices(vec![2, 4, 6, 8, 10]));
     }
 
     #[test]
@@ -51,8 +55,8 @@ mod tests {
 
     #[test]
     fn solution_457() {
-        println!("{}", circular_array_loop(vec![2,-1,1,2,2]));
-        println!("{}", circular_array_loop(vec![-1,-2]));
-        println!("{}", circular_array_loop(vec![-2,1,-1,-2,-2]));
+        println!("{}", circular_array_loop(vec![2, -1, 1, 2, 2]));
+        println!("{}", circular_array_loop(vec![-1, -2]));
+        println!("{}", circular_array_loop(vec![-2, 1, -1, -2, -2]));
     }
 }

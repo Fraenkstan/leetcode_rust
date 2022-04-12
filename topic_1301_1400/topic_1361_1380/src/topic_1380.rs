@@ -1,5 +1,4 @@
-
-pub fn lucky_numbers (matrix: Vec<Vec<i32>>) -> Vec<i32> {
+pub fn lucky_numbers(matrix: Vec<Vec<i32>>) -> Vec<i32> {
     let mut ret = Vec::new();
     let (m, n) = (matrix.len(), matrix[0].len());
     for i in 0..m {
@@ -12,8 +11,12 @@ pub fn lucky_numbers (matrix: Vec<Vec<i32>>) -> Vec<i32> {
             }
         }
         let mut max = min;
-        for j in 0..m { max = max.max(matrix[j][min_idx]); }
-        if min == max { ret.push(max); }
+        for j in 0..m {
+            max = max.max(matrix[j][min_idx]);
+        }
+        if min == max {
+            ret.push(max);
+        }
     }
     ret
 }

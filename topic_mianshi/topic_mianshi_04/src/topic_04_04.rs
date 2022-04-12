@@ -1,6 +1,6 @@
-use std::rc::Rc;
-use std::cell::RefCell;
 use crate::TreeNode;
+use std::cell::RefCell;
+use std::rc::Rc;
 
 pub fn is_balanced(root: Option<Rc<RefCell<TreeNode>>>) -> bool {
     dfs(&root).0

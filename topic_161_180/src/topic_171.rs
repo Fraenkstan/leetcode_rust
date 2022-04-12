@@ -1,7 +1,6 @@
-
-
 pub fn title_to_number(column_title: String) -> i32 {
-    column_title.chars()
+    column_title
+        .chars()
         .into_iter()
         .rev()
         .enumerate()

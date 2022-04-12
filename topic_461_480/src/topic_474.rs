@@ -1,4 +1,3 @@
-
 pub fn find_max_form(strs: Vec<String>, m: i32, n: i32) -> i32 {
     let mut dp = vec![vec![0; n as usize + 1]; m as usize + 1];
     for s in strs.iter() {

@@ -1,4 +1,3 @@
-
 mod topic_881;
 mod topic_884;
 mod topic_888;
@@ -11,9 +10,9 @@ mod tests {
 
     #[test]
     fn solution_881() {
-        println!("{}", num_rescue_boats(vec![1,2], 3));
-        println!("{}", num_rescue_boats(vec![3,2,2,1], 3));
-        println!("{}", num_rescue_boats(vec![3,5,3,4], 5));
+        println!("{}", num_rescue_boats(vec![1, 2], 3));
+        println!("{}", num_rescue_boats(vec![3, 2, 2, 1], 3));
+        println!("{}", num_rescue_boats(vec![3, 5, 3, 4], 5));
     }
 
     #[test]

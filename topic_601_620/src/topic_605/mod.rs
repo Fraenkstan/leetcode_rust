@@ -1,4 +1,3 @@
-
 pub fn can_place_flowers(flowerbed: Vec<i32>, n: i32) -> bool {
     let mut flowerbed = flowerbed;
     let mut count = 0;

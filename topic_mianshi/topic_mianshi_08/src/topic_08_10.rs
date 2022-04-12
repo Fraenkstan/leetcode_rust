@@ -1,5 +1,3 @@
-
-
 pub fn flood_fill(mut image: Vec<Vec<i32>>, sr: i32, sc: i32, new_color: i32) -> Vec<Vec<i32>> {
     let sr = sr as usize;
     let sc = sc as usize;

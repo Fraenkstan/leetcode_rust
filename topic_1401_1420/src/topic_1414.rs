@@ -1,4 +1,3 @@
-
 pub fn find_min_fibonacci_numbers(mut k: i32) -> i32 {
     let mut f = vec![1, 1];
     while *f.last().unwrap() < k {

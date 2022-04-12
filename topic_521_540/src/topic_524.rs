@@ -1,12 +1,11 @@
-
-
 pub fn find_longest_word(s: String, mut dictionary: Vec<String>) -> String {
-    dictionary.sort_by(|a, b|
+    dictionary.sort_by(|a, b| {
         if a.len() == b.len() {
             a.cmp(b)
         } else {
             b.len().cmp(&a.len())
-        });
+        }
+    });
     let s = s.as_bytes();
     for c in dictionary.into_iter() {
         let mut i = 0;
@@ -25,7 +24,7 @@ pub fn find_longest_word(s: String, mut dictionary: Vec<String>) -> String {
             i += 1;
         }
         if res {
-            return c
+            return c;
         }
     }
     "".to_string()

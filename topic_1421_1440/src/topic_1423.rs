@@ -1,4 +1,3 @@
-
 pub fn max_score(card_points: Vec<i32>, k: i32) -> i32 {
     let sum = card_points.iter().sum::<i32>();
     let window_size = card_points.len() - k as usize;

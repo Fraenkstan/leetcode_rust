@@ -1,4 +1,3 @@
-
 pub fn max_profit(prices: Vec<i32>) -> i32 {
     if prices.len() <= 1 {
         return 0;

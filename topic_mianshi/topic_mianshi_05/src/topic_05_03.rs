@@ -1,5 +1,3 @@
-
-
 pub fn reverse_bits(num: i32) -> i32 {
     let mut ans = 0;
     let mut pre_bits = 0;

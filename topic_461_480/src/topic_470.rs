@@ -1,5 +1,3 @@
-
-
 pub fn rand10() -> i32 {
     let (mut a, mut b) = (rand7(), rand7() * 7);
     while a + b > 47 {

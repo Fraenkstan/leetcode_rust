@@ -1,4 +1,3 @@
-
 mod topic_541;
 mod topic_542;
 
@@ -16,7 +15,13 @@ mod tests {
 
     #[test]
     fn solution_542() {
-        println!("{:?}", update_matrix(vec![vec![0,0,0], vec![0,1,0], vec![0,0,0]]));
-        println!("{:?}", update_matrix(vec![vec![0,0,0], vec![0,1,0], vec![1,1,1]]));
+        println!(
+            "{:?}",
+            update_matrix(vec![vec![0, 0, 0], vec![0, 1, 0], vec![0, 0, 0]])
+        );
+        println!(
+            "{:?}",
+            update_matrix(vec![vec![0, 0, 0], vec![0, 1, 0], vec![1, 1, 1]])
+        );
     }
 }

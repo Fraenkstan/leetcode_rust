@@ -1,6 +1,5 @@
-
 pub struct WordsFrequency {
-    trie: Trie
+    trie: Trie,
 }
 
 impl WordsFrequency {
@@ -29,7 +28,11 @@ impl Trie {
 
     fn insert(&mut self, word: &String) {
         let mut cur = self;
-        for (i, ch) in word.chars().map(|ch| (ch as u8 - 'a' as u8) as usize).enumerate() {
+        for (i, ch) in word
+            .chars()
+            .map(|ch| (ch as u8 - 'a' as u8) as usize)
+            .enumerate()
+        {
             cur = cur.children[ch].get_or_insert_with(|| Box::new(Trie::new()));
             if i == word.len() - 1 {
                 cur.count += 1;

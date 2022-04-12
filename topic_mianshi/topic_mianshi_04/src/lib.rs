@@ -29,10 +29,7 @@ pub struct ListNode {
 impl ListNode {
     #[inline]
     fn new(val: i32) -> Self {
-        ListNode {
-            next: None,
-            val,
-        }
+        ListNode { next: None, val }
     }
 }
 
@@ -47,9 +44,6 @@ mod topic_04_12;
 
 #[cfg(test)]
 mod tests {
-    use crate::TreeNode;
-    use std::rc::Rc;
-    use std::cell::RefCell;
     use crate::topic_04_01::find_whether_exists_path;
     use crate::topic_04_02::sorted_array_to_bst;
     use crate::topic_04_03::list_of_depth;
@@ -58,20 +52,46 @@ mod tests {
     use crate::topic_04_09::bst_sequences;
     use crate::topic_04_10::check_sub_tree;
     use crate::topic_04_12::path_sum;
+    use crate::TreeNode;
+    use std::cell::RefCell;
+    use std::rc::Rc;
 
     #[test]
     fn solution_04_01() {
-        println!("{}", find_whether_exists_path(3, vec![vec![0,1], vec![0,2],
-                                                        vec![1,2], vec![1,2]], 0, 2));
-        println!("{}", find_whether_exists_path(5, vec![vec![0,1], vec![0,2],
-                                                        vec![0,4], vec![0,4], vec![0,1],
-                                                        vec![1,3], vec![1,4], vec![1,3],
-                                                        vec![2,3], vec![3,4]], 0, 4));
+        println!(
+            "{}",
+            find_whether_exists_path(
+                3,
+                vec![vec![0, 1], vec![0, 2], vec![1, 2], vec![1, 2]],
+                0,
+                2
+            )
+        );
+        println!(
+            "{}",
+            find_whether_exists_path(
+                5,
+                vec![
+                    vec![0, 1],
+                    vec![0, 2],
+                    vec![0, 4],
+                    vec![0, 4],
+                    vec![0, 1],
+                    vec![1, 3],
+                    vec![1, 4],
+                    vec![1, 3],
+                    vec![2, 3],
+                    vec![3, 4]
+                ],
+                0,
+                4
+            )
+        );
     }
 
     #[test]
     fn solution_04_02() {
-        println!("{:?}", sorted_array_to_bst(vec![-10,-3,0,5,9]));
+        println!("{:?}", sorted_array_to_bst(vec![-10, -3, 0, 5, 9]));
     }
 
     #[test]
@@ -146,8 +166,13 @@ mod tests {
         root1.right = Some(Rc::new(RefCell::new(node2)));
 
         let root2 = TreeNode::new(2);
-        println!("{}", check_sub_tree(Some(Rc::new(RefCell::new(root1))),
-                                      Some(Rc::new(RefCell::new(root2)))));
+        println!(
+            "{}",
+            check_sub_tree(
+                Some(Rc::new(RefCell::new(root1))),
+                Some(Rc::new(RefCell::new(root2)))
+            )
+        );
     }
 
     #[test]

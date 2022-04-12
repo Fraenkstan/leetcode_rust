@@ -1,5 +1,3 @@
-
-
 pub fn generate_parenthesis(n: i32) -> Vec<String> {
     let mut ans = vec![];
     dfs(&mut ans, &mut String::new(), 0, n, n, n);

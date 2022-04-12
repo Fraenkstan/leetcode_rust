@@ -1,9 +1,11 @@
-use std::rc::Rc;
-use std::cell::RefCell;
 use crate::TreeNode;
+use std::cell::RefCell;
+use std::rc::Rc;
 
-
-pub fn check_sub_tree(t1: Option<Rc<RefCell<TreeNode>>>, t2: Option<Rc<RefCell<TreeNode>>>) -> bool {
+pub fn check_sub_tree(
+    t1: Option<Rc<RefCell<TreeNode>>>,
+    t2: Option<Rc<RefCell<TreeNode>>>,
+) -> bool {
     let vec1 = to_vec(t1);
     let vec2 = to_vec(t2);
     kmp(vec1, vec2)
@@ -49,8 +51,6 @@ fn kmp(t1: Vec<i32>, t2: Vec<i32>) -> bool {
         if j == t2.len() {
             return true;
         }
-
     }
     false
 }
-

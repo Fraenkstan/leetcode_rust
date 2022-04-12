@@ -1,4 +1,3 @@
-
 pub fn ways_to_step(n: i32) -> i32 {
     let n = n as usize;
     let len = n.max(3) + 1;

@@ -24,7 +24,11 @@ pub fn find_second_minimum_value(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
     pre_order(root, &mut nums);
     nums.sort_unstable();
     nums.dedup();
-    if nums.len() < 2 { -1 } else { nums[1] }
+    if nums.len() < 2 {
+        -1
+    } else {
+        nums[1]
+    }
 }
 
 fn pre_order(node: Option<Rc<RefCell<TreeNode>>>, nums: &mut Vec<i32>) {

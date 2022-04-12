@@ -1,5 +1,3 @@
-
-
 pub fn push_dominoes(dominoes: String) -> String {
     let mut dominoes = format!("L{}R", dominoes).into_bytes();
     let mut i = 0;

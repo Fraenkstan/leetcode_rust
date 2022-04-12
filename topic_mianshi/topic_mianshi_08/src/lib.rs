@@ -1,4 +1,3 @@
-
 mod topic_08_01;
 mod topic_08_02;
 mod topic_08_03;
@@ -40,19 +39,22 @@ mod tests {
 
     #[test]
     fn solution_08_02() {
-        println!("{:?}", path_with_obstacles(vec![vec![0,0,0], vec![0,1,0], vec![0,0,0]]));
+        println!(
+            "{:?}",
+            path_with_obstacles(vec![vec![0, 0, 0], vec![0, 1, 0], vec![0, 0, 0]])
+        );
     }
 
     #[test]
     fn solution_08_03() {
-        println!("{}", find_magic_index(vec![0,2,3,4,5]));
-        println!("{}", find_magic_index(vec![1,1,1]));
+        println!("{}", find_magic_index(vec![0, 2, 3, 4, 5]));
+        println!("{}", find_magic_index(vec![1, 1, 1]));
     }
 
     #[test]
     fn solution_08_04() {
-        println!("{:?}", subsets(vec![1,2,3]));
-        println!("{:?}", subsets(vec![1,1,1]));
+        println!("{:?}", subsets(vec![1, 2, 3]));
+        println!("{:?}", subsets(vec![1, 1, 1]));
     }
 
     #[test]
@@ -63,7 +65,7 @@ mod tests {
 
     #[test]
     fn solution_08_06() {
-        let mut a = vec![2,1,0];
+        let mut a = vec![2, 1, 0];
         let mut b = vec![];
         let mut c = vec![];
         hanota(&mut a, &mut b, &mut c);
@@ -87,9 +89,18 @@ mod tests {
 
     #[test]
     fn solution_08_10() {
-        println!("{:?}", flood_fill(vec![vec![1,1,1], vec![1,1,0], vec![1,0,1]], 1, 1, 2));
-        println!("{:?}", flood_fill(vec![vec![0,0,0], vec![0,0,0]], 0, 0, 1));
-        println!("{:?}", flood_fill(vec![vec![0,0,0], vec![0,1,1]], 1, 1, 1));
+        println!(
+            "{:?}",
+            flood_fill(vec![vec![1, 1, 1], vec![1, 1, 0], vec![1, 0, 1]], 1, 1, 2)
+        );
+        println!(
+            "{:?}",
+            flood_fill(vec![vec![0, 0, 0], vec![0, 0, 0]], 0, 0, 1)
+        );
+        println!(
+            "{:?}",
+            flood_fill(vec![vec![0, 0, 0], vec![0, 1, 1]], 1, 1, 1)
+        );
     }
 
     #[test]
@@ -114,9 +125,23 @@ mod tests {
 
     #[test]
     fn solution_08_13() {
-        println!("{}", pile_box(vec![vec![1,1,1], vec![2,2,2], vec![3,3,3]]));
-        println!("{}", pile_box(vec![vec![1,1,1], vec![2,3,4], vec![2,6,7], vec![3,4,5]]));
-        println!("{}", pile_box(vec![vec![16,20,17], vec![16,18,10], vec![11,11,19]]));
+        println!(
+            "{}",
+            pile_box(vec![vec![1, 1, 1], vec![2, 2, 2], vec![3, 3, 3]])
+        );
+        println!(
+            "{}",
+            pile_box(vec![
+                vec![1, 1, 1],
+                vec![2, 3, 4],
+                vec![2, 6, 7],
+                vec![3, 4, 5]
+            ])
+        );
+        println!(
+            "{}",
+            pile_box(vec![vec![16, 20, 17], vec![16, 18, 10], vec![11, 11, 19]])
+        );
     }
 
     #[test]

@@ -1,5 +1,3 @@
-
-
 pub fn compress_string(s: String) -> String {
     let mut chars = s.chars().collect::<Vec<char>>();
     chars.push('%');
@@ -14,7 +12,5 @@ pub fn compress_string(s: String) -> String {
             count = 1;
         }
     }
-    return if ans.len() < s.len() {
-        ans
-    } else { s }
+    return if ans.len() < s.len() { ans } else { s };
 }

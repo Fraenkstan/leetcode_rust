@@ -1,4 +1,3 @@
-
 mod topic_341;
 mod topic_342;
 mod topic_343;
@@ -8,6 +7,7 @@ mod topic_347;
 mod topic_349;
 mod topic_350;
 mod topic_354;
+mod topic_357;
 
 #[cfg(test)]
 mod tests {
@@ -21,13 +21,15 @@ mod tests {
     use crate::topic_349::intersection;
     use crate::topic_350::intersect;
     use crate::topic_354::max_envelopes;
+    use crate::topic_357::count_numbers_with_unique_digits;
 
     #[test]
     fn solution_341() {
         let test1 = vec![
             NestedInteger::List(vec![NestedInteger::Int(1), NestedInteger::Int(1)]),
             NestedInteger::Int(2),
-            NestedInteger::List(vec![NestedInteger::Int(1), NestedInteger::Int(1)])];
+            NestedInteger::List(vec![NestedInteger::Int(1), NestedInteger::Int(1)]),
+        ];
         let mut iter = NestedIterator::new(test1);
         while iter.has_next() {
             println!("{}", iter.next());
@@ -36,7 +38,9 @@ mod tests {
             NestedInteger::Int(1),
             NestedInteger::List(vec![
                 NestedInteger::Int(4),
-                NestedInteger::List(vec![NestedInteger::Int(6)])])];
+                NestedInteger::List(vec![NestedInteger::Int(6)]),
+            ]),
+        ];
         let mut iter = NestedIterator::new(test2);
         while iter.has_next() {
             println!("{}", iter.next());
@@ -75,24 +79,34 @@ mod tests {
 
     #[test]
     fn solution_347() {
-        println!("{:?}", top_k_frequent(vec![1,1,1,2,2,3], 2));
+        println!("{:?}", top_k_frequent(vec![1, 1, 1, 2, 2, 3], 2));
         println!("{:?}", top_k_frequent(vec![1], 1));
     }
 
     #[test]
     fn solution_349() {
-        println!("{:?}", intersection(vec![1,2,2,1], vec![2,2]));
-        println!("{:?}", intersection(vec![4,9,5], vec![9,4,9,8,4]));
+        println!("{:?}", intersection(vec![1, 2, 2, 1], vec![2, 2]));
+        println!("{:?}", intersection(vec![4, 9, 5], vec![9, 4, 9, 8, 4]));
     }
 
     #[test]
     fn solution_350() {
-        println!("{:?}", intersect(vec![1,2,2,1], vec![2,2]));
-        println!("{:?}", intersect(vec![4,9,5], vec![9,4,9,8,4]));
+        println!("{:?}", intersect(vec![1, 2, 2, 1], vec![2, 2]));
+        println!("{:?}", intersect(vec![4, 9, 5], vec![9, 4, 9, 8, 4]));
     }
 
     #[test]
     fn solution_354() {
-        println!("{}", max_envelopes(vec![vec![5,4],vec![6,4],vec![6,7],vec![2,3]]));
+        println!(
+            "{}",
+            max_envelopes(vec![vec![5, 4], vec![6, 4], vec![6, 7], vec![2, 3]])
+        );
+    }
+
+    #[test]
+    fn solution_357() {
+        // println!("{}", count_numbers_with_unique_digits(0));
+        // println!("{}", count_numbers_with_unique_digits(1));
+        println!("{}", count_numbers_with_unique_digits(2));
     }
 }

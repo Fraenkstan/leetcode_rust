@@ -1,8 +1,5 @@
+use std::collections::{HashMap, HashSet};
 use std::ptr::NonNull;
-use std::collections::{
-    HashMap,
-    HashSet,
-};
 
 /// 双向链表 + 两个 HashMap
 ///
@@ -37,13 +34,11 @@ enum Offset {
     Dec,
 }
 
-
 /**
  * `&self` means the method takes an immutable reference.
  * If you need a mutable reference, change it to `&mut self` instead.
  */
 impl AllOne {
-
     /** Initialize your data structure here. */
     pub fn new() -> Self {
         Default::default()
@@ -65,16 +60,18 @@ impl AllOne {
 
     /** Returns one of the keys with maximal value. */
     pub fn get_max_key(&self) -> String {
-        self.tail.as_ref().and_then(|tail| unsafe {
-            (*tail.as_ptr()).keys.iter().next().map(Clone::clone)
-        }).unwrap_or_else(|| "".to_string())
+        self.tail
+            .as_ref()
+            .and_then(|tail| unsafe { (*tail.as_ptr()).keys.iter().next().map(Clone::clone) })
+            .unwrap_or_else(|| "".to_string())
     }
 
     /** Returns one of the keys with Minimal value. */
     pub fn get_min_key(&self) -> String {
-        self.head.as_ref().and_then(|head| unsafe {
-            (*head.as_ptr()).keys.iter().next().map(Clone::clone)
-        }).unwrap_or_else(|| "".to_string())
+        self.head
+            .as_ref()
+            .and_then(|head| unsafe { (*head.as_ptr()).keys.iter().next().map(Clone::clone) })
+            .unwrap_or_else(|| "".to_string())
     }
 
     // `pop_head()` will constructs a node from its raw point, which will be destructured
@@ -110,60 +107,71 @@ impl AllOne {
         // update index
         let old_index = if let Some(index) = self.index.get_mut(&new_v) {
             (*index.as_ptr()).keys.insert(key.clone());
-            old_v.and_then(|old_v| self.index.get_mut(&old_v)).map(|v| *v)
+            old_v
+                .and_then(|old_v| self.index.get_mut(&old_v))
+                .map(|v| *v)
         } else if new_v > 0 {
             // insert a new node
             let mut node = Box::new(Node::default());
             node.value = new_v;
             node.keys.insert(key.clone());
             // find old and attach new node
-            let (old_index, node) = if let Some(old_index) = old_v.and_then(|old_v| self.index.get_mut(&old_v)) {
-                let old_index = old_index.clone();
-                let node = match offset {
-                    Offset::Inc => {
-                        // insert after
-                        node.prev = Some(old_index);
-                        node.next = (*old_index.as_ptr()).next.take();
-                        let node = Box::leak(node).into();
-                        (*old_index.as_ptr()).next = Some(node);
-                        (*node.as_ptr()).next.as_mut().map(|n| (*n.as_ptr()).prev = Some(node));
-                        node
-                    }
-                    Offset::Dec => {
-                        // insert before
-                        node.next = Some(old_index);
-                        node.prev = (*old_index.as_ptr()).prev.take();
-                        let node = Box::leak(node).into();
-                        (*old_index.as_ptr()).prev = Some(node);
-                        (*node.as_ptr()).prev.as_mut().map(|n| (*n.as_ptr()).next = Some(node));
-                        node
-                    }
-                };
+            let (old_index, node) =
+                if let Some(old_index) = old_v.and_then(|old_v| self.index.get_mut(&old_v)) {
+                    let old_index = old_index.clone();
+                    let node = match offset {
+                        Offset::Inc => {
+                            // insert after
+                            node.prev = Some(old_index);
+                            node.next = (*old_index.as_ptr()).next.take();
+                            let node = Box::leak(node).into();
+                            (*old_index.as_ptr()).next = Some(node);
+                            (*node.as_ptr())
+                                .next
+                                .as_mut()
+                                .map(|n| (*n.as_ptr()).prev = Some(node));
+                            node
+                        }
+                        Offset::Dec => {
+                            // insert before
+                            node.next = Some(old_index);
+                            node.prev = (*old_index.as_ptr()).prev.take();
+                            let node = Box::leak(node).into();
+                            (*old_index.as_ptr()).prev = Some(node);
+                            (*node.as_ptr())
+                                .prev
+                                .as_mut()
+                                .map(|n| (*n.as_ptr()).next = Some(node));
+                            node
+                        }
+                    };
 
-                // if new node is tail, update `tail` ptr
-                if (*node.as_ptr()).next.is_none() {
-                    self.tail = Some(node);
-                }
-                // if new node is head, update `head` ptr
-                if (*node.as_ptr()).prev.is_none() {
+                    // if new node is tail, update `tail` ptr
+                    if (*node.as_ptr()).next.is_none() {
+                        self.tail = Some(node);
+                    }
+                    // if new node is head, update `head` ptr
+                    if (*node.as_ptr()).prev.is_none() {
+                        self.head = Some(node);
+                    }
+                    (Some(old_index), node)
+                } else {
+                    node.next = self.head;
+                    let node = Box::leak(node).into();
+                    match self.head {
+                        Some(head) => (*head.as_ptr()).prev = Some(node),
+                        None => self.tail = Some(node),
+                    }
                     self.head = Some(node);
-                }
-                (Some(old_index), node)
-            } else {
-                node.next = self.head;
-                let node = Box::leak(node).into();
-                match self.head {
-                    Some(head) => (*head.as_ptr()).prev = Some(node),
-                    None => self.tail = Some(node),
-                }
-                self.head = Some(node);
-                (None, node)
-            };
+                    (None, node)
+                };
             self.index.insert(new_v, node);
             old_index
         } else {
             // if new_v == 0, no need to add a new node, but remove instead
-            old_v.and_then(|old_v| self.index.get_mut(&old_v)).map(|v| *v)
+            old_v
+                .and_then(|old_v| self.index.get_mut(&old_v))
+                .map(|v| *v)
         };
 
         if let Some(old_index) = old_index {

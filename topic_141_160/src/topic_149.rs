@@ -35,7 +35,11 @@ pub fn max_points(points: Vec<Vec<i32>>) -> i32 {
 }
 
 fn gcd(a: i32, b: i32) -> i32 {
-    if b != 0 { gcd(b, a % b) } else { a }
+    if b != 0 {
+        gcd(b, a % b)
+    } else {
+        a
+    }
 }
 
 #[allow(unused)]
@@ -51,7 +55,9 @@ pub fn max_points_1(points: Vec<Vec<i32>>) -> i32 {
         (i + 1..n as usize).into_iter().for_each(|j| {
             let dx = points[j][0] - points[i][0];
             let dy = points[j][1] - points[i][1];
-            if dx == 0 { count += 1; } else {
+            if dx == 0 {
+                count += 1;
+            } else {
                 let d: String = (dy as f64 / dx as f64).to_string();
                 let cnt = map.get(d.as_str()).or_else(|| Some(&0)).unwrap() + 1;
                 map.insert(d, cnt);

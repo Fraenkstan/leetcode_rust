@@ -1,5 +1,3 @@
-
-
 pub fn remove_duplicates(s: String) -> String {
     let mut stack = Vec::new();
     for c in s.chars() {

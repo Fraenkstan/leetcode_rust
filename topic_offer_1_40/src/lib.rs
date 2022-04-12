@@ -1,4 +1,3 @@
-
 #[derive(PartialEq, Eq, Clone, Debug)]
 pub struct ListNode {
     pub val: i32,
@@ -8,10 +7,7 @@ pub struct ListNode {
 impl ListNode {
     #[inline]
     fn new(val: i32) -> Self {
-        ListNode {
-            next: None,
-            val,
-        }
+        ListNode { next: None, val }
     }
 }
 
@@ -20,7 +16,6 @@ mod topic_offer_22;
 mod topic_offer_38;
 
 #[allow(unused)]
-
 #[cfg(test)]
 mod tests {
     use crate::topic_offer_10::fib;

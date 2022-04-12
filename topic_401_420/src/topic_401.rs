@@ -1,5 +1,3 @@
-
-
 pub fn read_binary_watch(turned_on: i32) -> Vec<String> {
     let mut ans = vec![];
     (0..12).into_iter().for_each(|h| {
@@ -7,7 +5,9 @@ pub fn read_binary_watch(turned_on: i32) -> Vec<String> {
             if turned_on == bit_count(h) + bit_count(m) {
                 if m < 10 {
                     ans.push(format!("{}:0{}", h, m));
-                } else { ans.push(format!("{}:{}", h, m)) }
+                } else {
+                    ans.push(format!("{}:{}", h, m))
+                }
             }
         })
     });

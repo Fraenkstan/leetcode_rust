@@ -1,4 +1,3 @@
-
 pub fn first_bad_version(n: i32) -> i32 {
     let mut l = 1;
     let mut r = n;

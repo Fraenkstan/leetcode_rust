@@ -1,5 +1,3 @@
-
-
 pub fn longest_palindrome_subseq(s: String) -> i32 {
     let s = s.as_bytes();
     let n = s.len();

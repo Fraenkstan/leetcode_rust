@@ -8,17 +8,17 @@ mod topic_994;
 #[cfg(test)]
 mod tests {
 
-    use std::rc::Rc;
-    use std::cell::RefCell;
     use crate::topic_969::pancake_sort;
     use crate::topic_981::TimeMap;
-    use crate::topic_987::{TreeNode, vertical_traversal};
+    use crate::topic_987::{vertical_traversal, TreeNode};
     use crate::topic_994::oranges_rotting;
+    use std::cell::RefCell;
+    use std::rc::Rc;
 
     #[test]
     fn solution_969() {
-        println!("{:?}", pancake_sort(vec![3,2,4,1]));
-        println!("{:?}", pancake_sort(vec![1,2,3]));
+        println!("{:?}", pancake_sort(vec![3, 2, 4, 1]));
+        println!("{:?}", pancake_sort(vec![1, 2, 3]));
     }
 
     #[test]
@@ -47,13 +47,22 @@ mod tests {
         node3.right = Some(Rc::new(RefCell::new(node7)));
         root.left = Some(Rc::new(RefCell::new(node2)));
         root.right = Some(Rc::new(RefCell::new(node3)));
-        println!("{:?}", vertical_traversal(Some(Rc::new(RefCell::new(root)))));
+        println!(
+            "{:?}",
+            vertical_traversal(Some(Rc::new(RefCell::new(root))))
+        );
     }
 
     #[test]
     fn solution_994() {
-        println!("{}", oranges_rotting(vec![vec![2,1,1], vec![1,1,0], vec![0,1,1]]));
-        println!("{}", oranges_rotting(vec![vec![2,1,1], vec![0,1,1], vec![1,0,1]]));
-        println!("{}", oranges_rotting(vec![vec![0,2]]));
+        println!(
+            "{}",
+            oranges_rotting(vec![vec![2, 1, 1], vec![1, 1, 0], vec![0, 1, 1]])
+        );
+        println!(
+            "{}",
+            oranges_rotting(vec![vec![2, 1, 1], vec![0, 1, 1], vec![1, 0, 1]])
+        );
+        println!("{}", oranges_rotting(vec![vec![0, 2]]));
     }
 }

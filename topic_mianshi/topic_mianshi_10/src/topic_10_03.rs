@@ -1,5 +1,3 @@
-
-
 pub fn search(arr: Vec<i32>, target: i32) -> i32 {
     let (mut left, mut right) = (0, arr.len() - 1);
     while arr[left] == arr[right] {
@@ -36,5 +34,5 @@ pub fn search(arr: Vec<i32>, target: i32) -> i32 {
         right as i32
     } else {
         -1
-    }
+    };
 }

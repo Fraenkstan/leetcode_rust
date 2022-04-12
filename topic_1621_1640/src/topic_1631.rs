@@ -110,10 +110,14 @@ pub fn minimum_effort_path(heights: Vec<Vec<i32>>) -> i32 {
             let dx = dir[0];
             let dy = dir[1];
 
-            if cur.0 == 0 && dx == -1 { return }
+            if cur.0 == 0 && dx == -1 {
+                return;
+            }
 
             if let Some(row) = efforts.get((cur.0 as i32 + dx) as usize) {
-                if cur.1 == 0 && dy == -1 { return }
+                if cur.1 == 0 && dy == -1 {
+                    return;
+                }
                 if let Some(v) = row.get((cur.1 as i32 + dy) as usize) {
                     //当前体力 和 从当前到(x+dy,y+dy)高度差的绝对值
                     let tmph = heights[cur.0][cur.1]
@@ -128,7 +132,11 @@ pub fn minimum_effort_path(heights: Vec<Vec<i32>>) -> i32 {
                             .get_mut((cur.1 as i32 + dy) as usize)
                             .unwrap() = new_effort;
 
-                        heap.push(Item((cur.0 as i32 + dx) as usize, (cur.1 as i32 + dy) as usize, new_effort));
+                        heap.push(Item(
+                            (cur.0 as i32 + dx) as usize,
+                            (cur.1 as i32 + dy) as usize,
+                            new_effort,
+                        ));
                     }
                 }
             }

@@ -1,11 +1,11 @@
-use std::rc::Rc;
-use std::cell::RefCell;
 use crate::TreeNode;
+use std::cell::RefCell;
+use std::rc::Rc;
 
 pub fn is_valid_bst(root: Option<Rc<RefCell<TreeNode>>>) -> bool {
-    let mut stack= vec![];
-    let mut cur= root;
-    let mut prev :Option<i32> = Option::None;
+    let mut stack = vec![];
+    let mut cur = root;
+    let mut prev: Option<i32> = Option::None;
     while !stack.is_empty() || cur.is_some() {
         while cur.is_some() {
             let cur_node = cur.unwrap();
@@ -24,7 +24,7 @@ pub fn is_valid_bst(root: Option<Rc<RefCell<TreeNode>>>) -> bool {
                 }
                 prev = Option::Some(cur_node.borrow().val);
             }
-            None => prev = Option::Some(cur_node.borrow().val)
+            None => prev = Option::Some(cur_node.borrow().val),
         }
         cur = cur_node.borrow().right.clone();
     }

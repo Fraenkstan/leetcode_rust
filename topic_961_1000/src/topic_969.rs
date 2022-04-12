@@ -1,5 +1,3 @@
-
-
 pub fn pancake_sort(mut arr: Vec<i32>) -> Vec<i32> {
     let arr = &mut arr;
     let n = arr.len();

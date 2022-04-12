@@ -1,4 +1,3 @@
-
 mod topic_2104;
 
 #[cfg(test)]
@@ -8,8 +7,8 @@ mod tests {
 
     #[test]
     fn solution_2104() {
-        println!("{}", sub_array_ranges(vec![1,2,3]));
-        println!("{}", sub_array_ranges(vec![1,3,3]));
-        println!("{}", sub_array_ranges(vec![4,-2,-3,4,1]));
+        println!("{}", sub_array_ranges(vec![1, 2, 3]));
+        println!("{}", sub_array_ranges(vec![1, 3, 3]));
+        println!("{}", sub_array_ranges(vec![4, -2, -3, 4, 1]));
     }
 }

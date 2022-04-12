@@ -5,21 +5,33 @@ pub fn kruskal(points: Vec<Vec<i32>>) -> i32 {
     let mut edges = Vec::new();
     for i in 0..n - 1 {
         for j in i + 1..n {
-            edges.push((i, j,  (points[i][0] - points[j][0]).abs() + (points[i][1] - points[j][1]).abs()));
+            edges.push((
+                i,
+                j,
+                (points[i][0] - points[j][0]).abs() + (points[i][1] - points[j][1]).abs(),
+            ));
         }
     }
-    edges.sort_unstable_by(|a,b| a.2.cmp(&b.2));
+    edges.sort_unstable_by(|a, b| a.2.cmp(&b.2));
 
     let mut parents = Vec::new();
-    for i in 0..n { parents.push(i); }
+    for i in 0..n {
+        parents.push(i);
+    }
 
     let mut answer = 0;
     for edge in edges {
         let mut a = edge.0;
         let mut b = edge.1;
-        while a != parents[a] { a = parents[a]; }
-        while b != parents[b] { b = parents[b]; }
-        if a == b { continue; }
+        while a != parents[a] {
+            a = parents[a];
+        }
+        while b != parents[b] {
+            b = parents[b];
+        }
+        if a == b {
+            continue;
+        }
         parents[b] = a;
         answer += edge.2;
     }
@@ -40,7 +52,7 @@ pub fn min_cost_connect_points(points: Vec<Vec<i32>>) -> i32 {
             ret += len;
             num += 1;
             if num == n {
-                break
+                break;
             }
         }
     }
@@ -75,8 +87,9 @@ fn build(n: usize, pos: &mut Vec<Pos>, edges: &mut Vec<Edge>) {
     pos.sort_by(|a, b| {
         return if a.x == b.x {
             a.y.cmp(&b.y)
-        }
-        else { a.x.cmp(&b.x) }
+        } else {
+            a.x.cmp(&b.x)
+        };
     });
     let mut a = Vec::with_capacity(n);
     let mut set: HashSet<i32> = HashSet::new();
@@ -113,8 +126,7 @@ fn binary_search(array: &Vec<i32>, target: i32) -> i32 {
         let num = array[mid as usize];
         if num < target {
             low = mid + 1;
-        }
-        else {
+        } else {
             high = mid;
         }
     }
@@ -131,25 +143,24 @@ struct DisjointSetUnion {
 struct BIT {
     tree: Vec<i32>,
     id_rec: Vec<i32>,
-    n: i32
+    n: i32,
 }
 
 struct Edge {
     len: i32,
     x: usize,
-    y: usize
+    y: usize,
 }
 
 struct Pos {
     id: usize,
     x: i32,
-    y: i32
+    y: i32,
 }
 
 impl DisjointSetUnion {
-
     pub fn new(n: usize) -> DisjointSetUnion {
-        DisjointSetUnion{
+        DisjointSetUnion {
             f: {
                 let mut vec = Vec::new();
                 for _i in 0..n {
@@ -164,15 +175,15 @@ impl DisjointSetUnion {
                 }
                 vec
             },
-            n
+            n,
         }
     }
 
     pub fn find(&mut self, x: usize) -> usize {
         if x == self.f[x] {
-            return x
+            return x;
         }
-        let val= self.find(self.f[x]);
+        let val = self.find(self.f[x]);
         self.f[x] = val;
         val
     }
@@ -194,7 +205,6 @@ impl DisjointSetUnion {
 }
 
 impl BIT {
-
     pub fn new(n: i32) -> BIT {
         BIT {
             tree: {
@@ -211,7 +221,7 @@ impl BIT {
                 }
                 vec
             },
-            n
+            n,
         }
     }
 
@@ -244,23 +254,13 @@ impl BIT {
 }
 
 impl Edge {
-
     pub fn new(len: i32, x: usize, y: usize) -> Edge {
-        Edge {
-            len,
-            x,
-            y
-        }
+        Edge { len, x, y }
     }
 }
 
 impl Pos {
-
     pub fn new(id: usize, x: i32, y: i32) -> Pos {
-        Pos {
-            id,
-            x,
-            y
-        }
+        Pos { id, x, y }
     }
 }

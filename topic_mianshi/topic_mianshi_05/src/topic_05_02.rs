@@ -1,5 +1,3 @@
-
-
 pub fn print_bin(mut num: f64) -> String {
     let mut ans = "0.".to_string();
     while num != 0_f64 {

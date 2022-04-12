@@ -1,6 +1,6 @@
-use std::rc::Rc;
 use std::cell::RefCell;
 use std::collections::HashMap;
+use std::rc::Rc;
 
 struct Person {
     name: String,
@@ -16,18 +16,14 @@ pub struct ThroneInheritance {
 #[allow(unused)]
 impl ThroneInheritance {
     pub fn new(king_name: String) -> Self {
-        let root = Some(Rc::new(RefCell::new(
-            Person {
-                name: king_name.clone(),
-                alive: true,
-                children: Vec::new(),
-            })));
+        let root = Some(Rc::new(RefCell::new(Person {
+            name: king_name.clone(),
+            alive: true,
+            children: Vec::new(),
+        })));
         let mut cache = HashMap::new();
         cache.insert(king_name, root.clone());
-        ThroneInheritance {
-            root,
-            cache,
-        }
+        ThroneInheritance { root, cache }
     }
 
     pub(crate) fn birth(&mut self, parent_name: String, child_name: String) {
@@ -38,7 +34,12 @@ impl ThroneInheritance {
         })));
         self.cache.insert(child_name, new_person.clone());
         if let Some(person) = self.cache.get_mut(&parent_name) {
-            person.as_mut().unwrap().borrow_mut().children.push(new_person);
+            person
+                .as_mut()
+                .unwrap()
+                .borrow_mut()
+                .children
+                .push(new_person);
         }
     }
 
@@ -54,7 +55,9 @@ impl ThroneInheritance {
         while !stack.is_empty() {
             let node = stack.pop();
             let node = node.unwrap().clone().unwrap();
-            if node.borrow().alive { orders.push(node.borrow().name.clone()); }
+            if node.borrow().alive {
+                orders.push(node.borrow().name.clone());
+            }
             for child in node.borrow().children.iter().rev() {
                 stack.push(child.clone());
             }

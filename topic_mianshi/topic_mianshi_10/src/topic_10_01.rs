@@ -1,5 +1,3 @@
-
-
 pub fn merge(a: &mut Vec<i32>, mut m: i32, b: &mut Vec<i32>, n: i32) {
     for i in 0..n as usize {
         let mut p = a.len() - 1;

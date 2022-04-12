@@ -1,8 +1,6 @@
-
-
 pub fn path_in_zig_zag_tree(label: i32) -> Vec<i32> {
     let mut max = 2;
-    while max <= label  {
+    while max <= label {
         max <<= 1;
     }
     let mut result = Vec::new();

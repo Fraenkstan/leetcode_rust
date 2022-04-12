@@ -1,4 +1,3 @@
-
 pub fn knight_probability(n: i32, k: i32, row: i32, column: i32) -> f64 {
     let mut dp = vec![vec![vec![0.0; n as usize]; n as usize]; k as usize + 1];
     let k = k as usize;
@@ -8,7 +7,16 @@ pub fn knight_probability(n: i32, k: i32, row: i32, column: i32) -> f64 {
                 if step == 0 {
                     dp[step][i as usize][j as usize] = 1.0;
                 } else {
-                    for (dx, dy) in [(-2, -1), (-2, 1), (2, -1), (2, 1), (-1, -2), (-1, 2), (1, -2), (1, 2)] {
+                    for (dx, dy) in [
+                        (-2, -1),
+                        (-2, 1),
+                        (2, -1),
+                        (2, 1),
+                        (-1, -2),
+                        (-1, 2),
+                        (1, -2),
+                        (1, 2),
+                    ] {
                         let ni = i + dx;
                         let nj = j + dy;
                         if ni >= 0 && ni < n && nj >= 0 && nj < n {

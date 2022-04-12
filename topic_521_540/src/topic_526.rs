@@ -1,5 +1,3 @@
-
-
 pub fn count_arrangement(n: i32) -> i32 {
     let mut dp = vec![0; 1 << n];
     dp[0] = 1;
@@ -17,11 +15,13 @@ pub fn count_arrangement(n: i32) -> i32 {
 pub fn count_arrangement_backstrace(n: i32) -> i32 {
     let mut vis = vec![false; (n + 1) as usize];
     let mut state = vec![Vec::new(); (n + 1) as usize];
-    (1..=n).for_each(|i| (1..=n).for_each(|j| {
-        if j % i == 0 || i %j == 0 {
-            state[i as usize].push(j);
-        }
-    }));
+    (1..=n).for_each(|i| {
+        (1..=n).for_each(|j| {
+            if j % i == 0 || i % j == 0 {
+                state[i as usize].push(j);
+            }
+        })
+    });
     back_strace(1, n, &state, &mut vis)
 }
 

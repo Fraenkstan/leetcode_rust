@@ -1,6 +1,3 @@
-
-
-
 pub fn sub_array_ranges(nums: Vec<i32>) -> i64 {
     let mut ans = 0;
     let mut max_dp = vec![vec![0; 1001]; 1001];

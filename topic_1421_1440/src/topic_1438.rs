@@ -18,9 +18,14 @@ pub fn longest_subarray(nums: Vec<i32>, limit: i32) -> i32 {
         max_queue.push_back(nums[right]);
         min_queue.push_back(nums[right]);
 
-        while !min_queue.is_empty() && !min_queue.is_empty() && max_queue[0] - min_queue[0] > limit {
-            if nums[left] == min_queue[0] { min_queue.pop_front(); }
-            if nums[left] == max_queue[0] { max_queue.pop_front(); }
+        while !min_queue.is_empty() && !min_queue.is_empty() && max_queue[0] - min_queue[0] > limit
+        {
+            if nums[left] == min_queue[0] {
+                min_queue.pop_front();
+            }
+            if nums[left] == max_queue[0] {
+                max_queue.pop_front();
+            }
             left += 1;
         }
 

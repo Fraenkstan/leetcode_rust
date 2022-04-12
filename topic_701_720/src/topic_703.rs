@@ -1,17 +1,16 @@
 pub struct KthLargest {
-    heap:           Vec<i32>,
-    size:           usize,
-    heap_maxsize:   usize,
+    heap: Vec<i32>,
+    size: usize,
+    heap_maxsize: usize,
 }
 
 #[allow(unused)]
 impl KthLargest {
-
     pub fn new(k: i32, nums: Vec<i32>) -> Self {
         let mut new_heap = KthLargest {
-            heap            :   vec![-1],
-            size            :   0,
-            heap_maxsize    :   k as usize,
+            heap: vec![-1],
+            size: 0,
+            heap_maxsize: k as usize,
         };
         for i in &nums {
             new_heap.add(*i);
@@ -41,14 +40,15 @@ impl KthLargest {
     fn down(&mut self, location: usize) {
         if ((location << 1) + 1 <= self.size)
             && (self.heap[(location << 1) + 1] <= self.heap[(location << 1)])
-            && (self.heap[(location << 1) + 1] < self.heap[location]) {
+            && (self.heap[(location << 1) + 1] < self.heap[location])
+        {
             self.adjust((location << 1) + 1, location);
-        }
-        else if ((location << 1) == self.size)
+        } else if ((location << 1) == self.size)
             && (self.heap[(location << 1)] < self.heap[location])
             || ((location << 1) + 1 <= self.size)
-            && (self.heap[(location << 1) + 1] >= self.heap[(location << 1)])
-            && (self.heap[(location << 1)] < self.heap[location]) {
+                && (self.heap[(location << 1) + 1] >= self.heap[(location << 1)])
+                && (self.heap[(location << 1)] < self.heap[location])
+        {
             self.adjust(location << 1, location);
         }
     }

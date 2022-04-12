@@ -1,4 +1,3 @@
-
 mod topic_572;
 mod topic_575;
 mod topic_576;
@@ -10,8 +9,8 @@ mod tests {
 
     #[test]
     fn solution_575() {
-        println!("{}", distribute_candies(vec![1,1,2,2,3,3]));
-        println!("{}", distribute_candies(vec![1,1,2,3]));
+        println!("{}", distribute_candies(vec![1, 1, 2, 2, 3, 3]));
+        println!("{}", distribute_candies(vec![1, 1, 2, 3]));
     }
 
     #[test]

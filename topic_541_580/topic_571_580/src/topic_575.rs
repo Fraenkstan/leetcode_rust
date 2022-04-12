@@ -1,4 +1,3 @@
-
 pub fn distribute_candies(candy_type: Vec<i32>) -> i32 {
     let mut ans = 0;
     let n = candy_type.len() as i32;

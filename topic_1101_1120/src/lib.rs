@@ -1,4 +1,3 @@
-
 mod topic_1104;
 mod topic_1109;
 
@@ -16,7 +15,13 @@ mod tests {
 
     #[test]
     fn solution_1109() {
-        println!("{:?}", corp_flight_bookings(vec![vec![1,2,10], vec![2,3,20], vec![2,5,25]], 5));
-        println!("{:?}", corp_flight_bookings(vec![vec![1,2,10], vec![2,2,15]], 2));
+        println!(
+            "{:?}",
+            corp_flight_bookings(vec![vec![1, 2, 10], vec![2, 3, 20], vec![2, 5, 25]], 5)
+        );
+        println!(
+            "{:?}",
+            corp_flight_bookings(vec![vec![1, 2, 10], vec![2, 2, 15]], 2)
+        );
     }
 }

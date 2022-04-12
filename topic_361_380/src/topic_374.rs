@@ -1,4 +1,3 @@
-
 unsafe fn guess_number(n: i32) -> i32 {
     let mut l = 1;
     let mut r = n;
@@ -8,7 +7,7 @@ unsafe fn guess_number(n: i32) -> i32 {
             -1 => l = mid + 1,
             1 => r = mid,
             0 => return mid,
-            _ => ()
+            _ => (),
         }
     }
     l

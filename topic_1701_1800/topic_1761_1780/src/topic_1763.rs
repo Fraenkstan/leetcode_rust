@@ -1,4 +1,3 @@
-
 pub fn longest_nice_substring(s: String) -> String {
     let n = s.len();
     let mut max_pos = 0;

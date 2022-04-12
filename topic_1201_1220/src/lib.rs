@@ -24,16 +24,30 @@ mod tests {
     #[test]
     fn solution_1203() {
         println!("Hello, world!");
-        let group1 = vec![-1,-1,1,0,0,1,0,-1];
-        let before_items1 =
-            vec![vec![], vec![6], vec![5], vec![6], vec![3,6],
-                 vec![], vec![], vec![]];
+        let group1 = vec![-1, -1, 1, 0, 0, 1, 0, -1];
+        let before_items1 = vec![
+            vec![],
+            vec![6],
+            vec![5],
+            vec![6],
+            vec![3, 6],
+            vec![],
+            vec![],
+            vec![],
+        ];
         println!("{:?}", sort_items(8, 2, group1, before_items1));
 
-        let group2 = vec![-1,-1,1,0,0,1,0,-1];
-        let before_items2 =
-            vec![vec![], vec![6], vec![5], vec![6], vec![3],
-                 vec![], vec![4], vec![]];
+        let group2 = vec![-1, -1, 1, 0, 0, 1, 0, -1];
+        let before_items2 = vec![
+            vec![],
+            vec![6],
+            vec![5],
+            vec![6],
+            vec![3],
+            vec![],
+            vec![4],
+            vec![],
+        ];
         println!("{:?}", sort_items(8, 2, group2, before_items2));
     }
 }

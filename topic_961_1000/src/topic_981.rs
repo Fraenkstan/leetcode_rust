@@ -12,7 +12,10 @@ impl TimeMap {
     }
 
     pub fn set(&mut self, key: String, value: String, timestamp: i32) {
-        let t = self.data.entry(key).or_insert_with(|| (Vec::new(), HashMap::new()));
+        let t = self
+            .data
+            .entry(key)
+            .or_insert_with(|| (Vec::new(), HashMap::new()));
         match t.0.binary_search(&timestamp) {
             Ok(i) => t.0[i] = timestamp,
             Err(i) => t.0.insert(i, timestamp),
@@ -24,11 +27,13 @@ impl TimeMap {
         if let Some((v, m)) = self.data.get(&key) {
             match v.binary_search(&timestamp) {
                 Ok(_) => m[&timestamp].clone(),
-                Err(i) => if i > 0 {
-                    m[&v[i - 1]].clone()
-                } else {
-                    String::new()
-                },
+                Err(i) => {
+                    if i > 0 {
+                        m[&v[i - 1]].clone()
+                    } else {
+                        String::new()
+                    }
+                }
             }
         } else {
             String::new()

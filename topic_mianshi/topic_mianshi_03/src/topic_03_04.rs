@@ -2,15 +2,14 @@ use std::option::Option::Some;
 
 pub struct MyQueue {
     stack_in: Vec<i32>,
-    stack_out: Vec<i32>
+    stack_out: Vec<i32>,
 }
 
 impl MyQueue {
-
     pub(crate) fn new() -> Self {
-        MyQueue{
+        MyQueue {
             stack_in: vec![],
-            stack_out: vec![]
+            stack_out: vec![],
         }
     }
 
@@ -32,7 +31,7 @@ impl MyQueue {
             *self.stack_in.first().unwrap_or(&-1)
         } else {
             *self.stack_out.last().unwrap_or(&-1)
-        }
+        };
     }
 
     pub(crate) fn empty(&self) -> bool {

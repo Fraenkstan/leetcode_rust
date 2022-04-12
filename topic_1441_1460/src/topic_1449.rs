@@ -1,6 +1,4 @@
-
 pub fn largest_number(cost: Vec<i32>, target: i32) -> String {
-
     let mut dp = vec![i32::MIN; target as usize + 1];
     dp[0] = 0;
 

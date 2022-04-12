@@ -1,5 +1,3 @@
-
-
 pub fn set_zeroes(matrix: &mut Vec<Vec<i32>>) {
     let row = matrix.len();
     let col = matrix[0].len();

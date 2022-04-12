@@ -1,5 +1,3 @@
-
-
 pub fn convert(s: String, num_rows: i32) -> String {
     let num_rows = num_rows as usize;
     let mut rows = vec![String::new(); num_rows];

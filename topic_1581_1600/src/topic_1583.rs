@@ -1,5 +1,3 @@
-
-
 pub fn unhappy_friends(n: i32, preferences: Vec<Vec<i32>>, pairs: Vec<Vec<i32>>) -> i32 {
     let n = n as usize;
     let mut order = vec![vec![0; n]; n];
@@ -24,7 +22,7 @@ pub fn unhappy_friends(n: i32, preferences: Vec<Vec<i32>>, pairs: Vec<Vec<i32>>)
             let v = match_vec[u as usize];
             if order[u as usize][x] < order[u as usize][v as usize] {
                 count += 1;
-                break
+                break;
             }
         }
     }

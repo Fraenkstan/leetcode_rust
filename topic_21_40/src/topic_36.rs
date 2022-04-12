@@ -12,7 +12,8 @@ pub fn is_valid_sudoku(board: Vec<Vec<char>>) -> bool {
             let order_sub_sudoku = c / 3 + order_base;
             if row_sudoku.contains(current)
                 || col_sudoku[c].contains(current)
-                || sub_sudoku[order_sub_sudoku].contains(current){
+                || sub_sudoku[order_sub_sudoku].contains(current)
+            {
                 return false;
             }
             if *current != '.' {

@@ -22,7 +22,7 @@ pub fn highest_peak(is_water: Vec<Vec<i32>>) -> Vec<Vec<i32>> {
                 if x < rows && y < cols && !visited[x][y] {
                     ans[x][y] = high;
                     visited[x][y] = true;
-                    q.push_back((x,y));
+                    q.push_back((x, y));
                 }
             }
         }

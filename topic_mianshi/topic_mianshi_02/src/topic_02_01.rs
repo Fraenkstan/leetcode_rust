@@ -14,5 +14,7 @@ pub fn remove_duplicate_nodes(head: Option<Box<ListNode>>) -> Option<Box<ListNod
             }
         }
         Some(head)
-    } else { None }
+    } else {
+        None
+    }
 }

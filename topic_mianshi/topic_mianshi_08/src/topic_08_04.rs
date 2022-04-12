@@ -1,5 +1,3 @@
-
-
 pub fn subsets(nums: Vec<i32>) -> Vec<Vec<i32>> {
     let mut nums = nums;
     let mut ans = vec![];

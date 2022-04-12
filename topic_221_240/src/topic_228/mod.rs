@@ -1,4 +1,3 @@
-
 pub fn summary_ranges(nums: Vec<i32>) -> Vec<String> {
     let len = nums.len();
     let mut result: Vec<String> = Vec::new();
@@ -10,9 +9,7 @@ pub fn summary_ranges(nums: Vec<i32>) -> Vec<String> {
     sub_vec.push(nums[0]);
     for i in 1..len {
         if *nums.get(i).unwrap() == *nums.get(i - 1).unwrap() + 1 {
-
-        }
-        else {
+        } else {
             sub_vecs.push(sub_vec);
             sub_vec = Vec::new();
         }
@@ -22,8 +19,7 @@ pub fn summary_ranges(nums: Vec<i32>) -> Vec<String> {
     for sub in sub_vecs {
         if sub.len() == 1 {
             result.push(format!("{}", sub[0]));
-        }
-        else {
+        } else {
             result.push(format!("{}->{}", sub[0], sub[sub.len() - 1]));
         }
     }

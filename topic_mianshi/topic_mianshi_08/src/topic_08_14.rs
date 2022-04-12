@@ -1,5 +1,3 @@
-
-
 pub fn count_eval(s: String, result: i32) -> i32 {
     let str = s.into_bytes();
     let len = str.len();
@@ -46,10 +44,10 @@ fn caculate(op: char, dp: &mut Vec<Vec<(i32, i32)>>, start: usize, end: usize, i
             dp[start][end].0 += dp[start][i].0 * dp[i + 1][end].0;
         }
         '^' => {
-            dp[start][end].0 += dp[start][i].0 * dp[i + 1][end].0
-                + dp[start][i].1 * dp[i + 1][end].1;
-            dp[start][end].1 += dp[start][i].0 * dp[i + 1][end].1
-                + dp[start][i].1 * dp[i + 1][end].0;
+            dp[start][end].0 +=
+                dp[start][i].0 * dp[i + 1][end].0 + dp[start][i].1 * dp[i + 1][end].1;
+            dp[start][end].1 +=
+                dp[start][i].0 * dp[i + 1][end].1 + dp[start][i].1 * dp[i + 1][end].0;
         }
         _ => {}
     }

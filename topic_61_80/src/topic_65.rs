@@ -1,4 +1,3 @@
-
 pub fn is_number(s: String) -> bool {
     s.chars()
         .try_fold(State::new(), State::handle)
@@ -89,7 +88,7 @@ impl State {
             End => match c {
                 ' ' => Ok(End),
                 _ => Err(()),
-            }
+            },
         }
     }
 }

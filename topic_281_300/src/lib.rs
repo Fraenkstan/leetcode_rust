@@ -1,13 +1,12 @@
-
 mod topic_295;
 mod topic_297;
 
 #[cfg(test)]
 mod tests {
-    use std::rc::Rc;
-    use std::cell::RefCell;
     use crate::topic_295::MedianFinder;
     use crate::topic_297::{Codec, TreeNode};
+    use std::cell::RefCell;
+    use std::rc::Rc;
 
     #[test]
     fn solution_295() {

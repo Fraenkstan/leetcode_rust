@@ -1,5 +1,3 @@
-
-
 pub fn nearest_palindromic(n: String) -> String {
     let len = n.len();
     let tt = n.parse::<i64>().unwrap();
@@ -49,11 +47,12 @@ pub fn nearest_palindromic(n: String) -> String {
         if t < (min - rnum).abs() || (t == (min - rnum).abs() && i < min) {
             min = i;
         }
-    };
+    }
     min.to_string()
 }
 
-fn fc(s: &mut String, len: usize) -> i64 { // 获取回文数
+fn fc(s: &mut String, len: usize) -> i64 {
+    // 获取回文数
     let v = unsafe { s.as_mut_vec() };
     let mut v = v.clone();
     if len & 1 == 1 {

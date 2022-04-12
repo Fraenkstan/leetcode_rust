@@ -1,5 +1,3 @@
-
-
 pub fn num_rescue_boats(people: Vec<i32>, limit: i32) -> i32 {
     let mut people = people;
     people.sort_unstable();
@@ -9,15 +7,10 @@ pub fn num_rescue_boats(people: Vec<i32>, limit: i32) -> i32 {
             ans += 1;
             left += 1;
             right -= 1;
-        }
-        else {
+        } else {
             ans += 1;
             right -= 1;
         }
     }
-    return if left == right {
-        ans + 1
-    } else {
-        ans
-    }
+    return if left == right { ans + 1 } else { ans };
 }

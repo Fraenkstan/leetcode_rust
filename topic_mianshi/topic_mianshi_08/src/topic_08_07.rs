@@ -1,5 +1,3 @@
-
-
 pub fn permutation(s: String) -> Vec<String> {
     let mut chars = s.into_bytes();
     let mut ans = vec![];

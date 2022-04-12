@@ -18,11 +18,11 @@ mod tests {
 
     #[test]
     fn solution_877() {
-        println!("{}", stone_game(vec![5,3,4,5]));
+        println!("{}", stone_game(vec![5, 3, 4, 5]));
     }
 
     #[test]
     fn solution_879() {
-        println!("{}", profitable_schemes(5, 3, vec![2,2], vec![2,3]));
+        println!("{}", profitable_schemes(5, 3, vec![2, 2], vec![2, 3]));
     }
 }

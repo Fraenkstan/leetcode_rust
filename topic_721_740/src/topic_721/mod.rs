@@ -1,7 +1,4 @@
-
-
 pub fn accounts_merge(accounts: Vec<Vec<String>>) -> Vec<Vec<String>> {
-
     let mut parents = std::collections::HashMap::new();
     let mut mail2account = std::collections::HashMap::new();
     for i in 0..accounts.len() {
@@ -16,9 +13,15 @@ pub fn accounts_merge(accounts: Vec<Vec<String>>) -> Vec<Vec<String>> {
         for j in 2..accounts[i].len() {
             let mut a = &accounts[i][j - 1];
             let mut b = &accounts[i][j];
-            while &a != parents.get(a).unwrap() { a = parents.get(a).unwrap(); }
-            while &b != parents.get(b).unwrap() { b = parents.get(b).unwrap(); }
-            if a == b { continue; }
+            while &a != parents.get(a).unwrap() {
+                a = parents.get(a).unwrap();
+            }
+            while &b != parents.get(b).unwrap() {
+                b = parents.get(b).unwrap();
+            }
+            if a == b {
+                continue;
+            }
             *parents.get_mut(b).unwrap() = a;
         }
     }
@@ -26,7 +29,9 @@ pub fn accounts_merge(accounts: Vec<Vec<String>>) -> Vec<Vec<String>> {
     let mut sets = std::collections::HashMap::new();
     for (&k, &_v) in parents.iter() {
         let mut root = k;
-        while &root != parents.get(root).unwrap() { root = parents.get(root).unwrap(); }
+        while &root != parents.get(root).unwrap() {
+            root = parents.get(root).unwrap();
+        }
         sets.entry(root).or_insert(Vec::new()).push(k);
     }
 

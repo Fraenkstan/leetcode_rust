@@ -1,5 +1,3 @@
-
-
 pub fn num_ways(n: i32, relation: Vec<Vec<i32>>, k: i32) -> i32 {
     let (n, k) = (n as usize, k as usize);
     let mut dp = vec![vec![0; n]; k + 1];

@@ -1,5 +1,3 @@
-
-
 pub fn find_closed_numbers(num: i32) -> Vec<i32> {
     if num <= 0 {
         return vec![-1, -1];
@@ -46,7 +44,7 @@ fn get_prev(num: i32) -> i32 {
     }
     let p = c0 + c1;
     num = num & (!0 << (p + 1));
-    let mask = (1 << (c1 + 1)) -1;
+    let mask = (1 << (c1 + 1)) - 1;
     num = num | mask << (c0 - 1);
     num
 }

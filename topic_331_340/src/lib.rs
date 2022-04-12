@@ -1,4 +1,3 @@
-
 mod topic_334;
 mod topic_338;
 
@@ -9,9 +8,9 @@ mod tests {
 
     #[test]
     fn solution_334() {
-        println!("{}", increasing_triplet(vec![1,2,3,4,5]));
-        println!("{}", increasing_triplet(vec![5,4,3,2,1]));
-        println!("{}", increasing_triplet(vec![2,1,5,0,4,6]));
+        println!("{}", increasing_triplet(vec![1, 2, 3, 4, 5]));
+        println!("{}", increasing_triplet(vec![5, 4, 3, 2, 1]));
+        println!("{}", increasing_triplet(vec![2, 1, 5, 0, 4, 6]));
     }
 
     #[test]

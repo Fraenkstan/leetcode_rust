@@ -1,4 +1,3 @@
-
 pub fn stone_game(piles: Vec<i32>) -> bool {
     let mut dp = vec![vec![0; piles.len()]; piles.len()];
 

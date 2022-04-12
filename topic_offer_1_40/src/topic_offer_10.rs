@@ -1,5 +1,3 @@
-
-
 pub fn fib(n: i32) -> i32 {
     let mut dp = vec![0; (n as usize).max(2) + 1];
     dp[1] = 1;

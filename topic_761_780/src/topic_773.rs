@@ -2,7 +2,6 @@ use std::collections::HashSet;
 
 const MOVE_STEP: [&str; 4] = ["UP", "DOWN", "LEFT", "RIGHT"];
 
-
 pub fn sliding_puzzle(board: Vec<Vec<i32>>) -> i32 {
     let mut rst = 0;
     let mut visited_set = HashSet::new();
@@ -45,7 +44,6 @@ pub fn sliding_puzzle(board: Vec<Vec<i32>>) -> i32 {
     }
     -1
 }
-
 
 /// 搬动 0 的位置，获取新的字符串，这里要注意，之所以要进行交换两次，因为我们要保证数组的不变，以便给下一种搬动使用
 pub fn get_str(board: &mut Vec<Vec<i32>>, row: usize, col: usize, step: &str) -> Option<String> {
@@ -90,7 +88,7 @@ pub fn get_str(board: &mut Vec<Vec<i32>>, row: usize, col: usize, step: &str) ->
                 None
             }
         }
-        _ => None
+        _ => None,
     }
 }
 
@@ -103,15 +101,14 @@ pub fn swap(board: &mut Vec<Vec<i32>>, r1: usize, c1: usize, r2: usize, c2: usiz
 
 /// 把二维数组转为 字符串
 pub fn parse_string(board: &Vec<Vec<i32>>) -> String {
-    board.iter()
-        .map(|o| -> String {
-            o.iter().map(|o| o.to_string()).collect()
-        })
+    board
+        .iter()
+        .map(|o| -> String { o.iter().map(|o| o.to_string()).collect() })
         .collect()
 }
 
 /// 转字符串为二维数组
-pub fn parse_vec(s: &String) -> Vec<Vec<i32>> {
+fn parse_vec(s: &String) -> Vec<Vec<i32>> {
     let char_arr: Vec<char> = s.chars().collect();
     let mut rst = vec![vec![0; 3]; 2];
     for i in 0..3 {

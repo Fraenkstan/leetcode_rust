@@ -1,5 +1,3 @@
-
-
 pub fn compress(chars: &mut Vec<char>) -> i32 {
     let len = chars.len();
     let mut ans = 0;

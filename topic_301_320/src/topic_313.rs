@@ -1,5 +1,3 @@
-
-
 pub fn nth_super_ugly_number(n: i32, primes: Vec<i32>) -> i32 {
     let k = primes.len();
     let mut dp = Vec::with_capacity(n as usize);

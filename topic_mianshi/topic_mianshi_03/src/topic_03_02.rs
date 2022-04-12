@@ -1,13 +1,14 @@
-
 pub struct MinStack {
     vec: Vec<i32>,
-    min: Vec<usize>
+    min: Vec<usize>,
 }
 
 impl MinStack {
-
     pub(crate) fn new() -> Self {
-        MinStack{vec: vec![], min: vec![]}
+        MinStack {
+            vec: vec![],
+            min: vec![],
+        }
     }
 
     pub(crate) fn push(&mut self, x: i32) {

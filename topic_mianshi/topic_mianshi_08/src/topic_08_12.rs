@@ -1,5 +1,3 @@
-
-
 pub fn solve_n_queens(n: i32) -> Vec<Vec<String>> {
     let digits: usize = ((1 << n) - 1) as usize;
     let mut r: usize = 0;

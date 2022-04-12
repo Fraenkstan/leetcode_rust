@@ -7,7 +7,9 @@ pub fn num_enclaves(grid: Vec<Vec<i32>>) -> i32 {
     let mut fifo = VecDeque::with_capacity(n * m);
     for i in 0..n {
         for j in 0..m {
-            if g[i][j] == 0 {continue}
+            if g[i][j] == 0 {
+                continue;
+            }
             g[i][j] = 0;
             fifo.push_back((i as i32, j as i32));
             ans += bfs(&mut g, &mut fifo);
@@ -27,7 +29,8 @@ fn bfs(g: &mut Vec<Vec<i32>>, fifo: &mut VecDeque<(i32, i32)>) -> i32 {
             let x = i + dir[d];
             let y = j + dir[d + 1];
             if x < 0 || x >= n || y < 0 || y >= m {
-                boundary = true; continue
+                boundary = true;
+                continue;
             }
             if g[x as usize][y as usize] == 1 {
                 g[x as usize][y as usize] = 0;
@@ -35,5 +38,9 @@ fn bfs(g: &mut Vec<Vec<i32>>, fifo: &mut VecDeque<(i32, i32)>) -> i32 {
             }
         }
     }
-    if boundary {0} else {cnt}
+    if boundary {
+        0
+    } else {
+        cnt
+    }
 }

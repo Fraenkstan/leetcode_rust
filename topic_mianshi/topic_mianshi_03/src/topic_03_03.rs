@@ -1,14 +1,12 @@
-
 pub struct StackOfPlates {
     vec: Vec<i32>,
     capacity: i32,
-    index: Vec<Vec<usize>>
+    index: Vec<Vec<usize>>,
 }
 
 impl StackOfPlates {
-
     pub(crate) fn new(cap: i32) -> Self {
-        StackOfPlates{
+        StackOfPlates {
             vec: vec![],
             capacity: cap,
             index: vec![vec![]],
@@ -17,13 +15,13 @@ impl StackOfPlates {
 
     pub(crate) fn push(&mut self, val: i32) {
         if self.capacity == 0 {
-            return
+            return;
         }
         self.vec.push(val);
         for index in self.index.iter_mut() {
             if index.len() < self.capacity as usize {
                 index.push(self.vec.len() - 1);
-                return
+                return;
             }
         }
         self.index.push(vec![self.vec.len() - 1]);
@@ -56,7 +54,10 @@ impl StackOfPlates {
             self.index.remove(index as usize);
         }
         for index_vec in self.index.iter_mut() {
-            index_vec.into_iter().filter(|i| *i > &mut index).for_each(|i| *i -= 1);
+            index_vec
+                .into_iter()
+                .filter(|i| *i > &mut index)
+                .for_each(|i| *i -= 1);
         }
         self.vec.remove(index)
     }

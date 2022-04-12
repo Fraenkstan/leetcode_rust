@@ -1,8 +1,10 @@
-
-
 pub fn integer_break(n: i32) -> i32 {
-    if n == 2 { return 1 }
-    if n == 3 { return 2 }
+    if n == 2 {
+        return 1;
+    }
+    if n == 3 {
+        return 2;
+    }
     let mut dp = vec![0; n as usize + 1];
     dp[1] = 1;
     for i in 2..=n as usize {

@@ -1,5 +1,3 @@
-
-
 pub fn find_integers(n: i32) -> i32 {
     let n = n + 1;
     let b: Vec<_> = format!("{:b}", n).chars().rev().collect();

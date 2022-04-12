@@ -1,4 +1,4 @@
-use std::collections::{HashSet, HashMap};
+use std::collections::{HashMap, HashSet};
 
 pub fn display_table(orders: Vec<Vec<String>>) -> Vec<Vec<String>> {
     let mut names_set: HashSet<&str> = HashSet::new();

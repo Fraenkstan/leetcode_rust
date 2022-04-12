@@ -1,10 +1,10 @@
-
-
-
 pub fn moves_to_chessboard(board: Vec<Vec<i32>>) -> i32 {
     let n = board.len();
     let first_row = board.get(0).unwrap();
-    let first_col = board.iter().map(|row| *row.get(0).unwrap()).collect::<Vec<i32>>();
+    let first_col = board
+        .iter()
+        .map(|row| *row.get(0).unwrap())
+        .collect::<Vec<i32>>();
     if !check_single_row(first_row) || !check_single_row(&first_col) {
         return -1;
     }
@@ -21,7 +21,10 @@ pub fn moves_to_chessboard(board: Vec<Vec<i32>>) -> i32 {
         }
     }
     for i in 1..n {
-        let col = board.iter().map(|row| *row.get(i).unwrap()).collect::<Vec<i32>>();
+        let col = board
+            .iter()
+            .map(|row| *row.get(i).unwrap())
+            .collect::<Vec<i32>>();
         if first_col[0] == col[0] {
             if !col.iter().zip(first_col.iter()).all(|(&a, &b)| a == b) {
                 return -1;
@@ -36,31 +39,41 @@ pub fn moves_to_chessboard(board: Vec<Vec<i32>>) -> i32 {
 }
 
 fn check_single_row(row: &Vec<i32>) -> bool {
-    row.len() / 2 <= row.iter().filter(|&&i| i == 0).count() &&
-        row.iter().filter(|&&i| i == 0).count() <= row.len() / 2 + 1
+    row.len() / 2 <= row.iter().filter(|&&i| i == 0).count()
+        && row.iter().filter(|&&i| i == 0).count() <= row.len() / 2 + 1
 }
 
 fn count(row: &Vec<i32>) -> i32 {
     let len = row.len();
     return if len % 2 == 0 {
-        let count0 = row.iter().enumerate()
-            .filter(|&(idx, &i)| idx % 2 == 0 && i != 0).count() as i32;
-        let count1 = row.iter().enumerate()
-            .filter(|&(idx, &i)| idx % 2 == 0 && i != 1).count() as i32;
+        let count0 = row
+            .iter()
+            .enumerate()
+            .filter(|&(idx, &i)| idx % 2 == 0 && i != 0)
+            .count() as i32;
+        let count1 = row
+            .iter()
+            .enumerate()
+            .filter(|&(idx, &i)| idx % 2 == 0 && i != 1)
+            .count() as i32;
         count0.min(count1)
     } else {
         if row.iter().filter(|&&i| i == 0).count() > len / 2 {
-            row.iter().enumerate()
-                .filter(|&(idx, &i)| idx % 2 == 0 && i != 0).count() as i32
+            row.iter()
+                .enumerate()
+                .filter(|&(idx, &i)| idx % 2 == 0 && i != 0)
+                .count() as i32
         } else {
-            row.iter().enumerate()
-                .filter(|&(idx, &i)| idx % 2 == 0 && i != 1).count() as i32
+            row.iter()
+                .enumerate()
+                .filter(|&(idx, &i)| idx % 2 == 0 && i != 1)
+                .count() as i32
         }
-    }
+    };
 }
 
 #[test]
 fn test() {
-    println!("{}", count(&vec![1,0,0,1,1]));
-    println!("{}", count(&vec![1,0,1,0,0]));
+    println!("{}", count(&vec![1, 0, 0, 1, 1]));
+    println!("{}", count(&vec![1, 0, 1, 0, 0]));
 }

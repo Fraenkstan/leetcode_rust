@@ -1,6 +1,6 @@
+use crate::TreeNode;
 use std::cell::RefCell;
 use std::rc::Rc;
-use crate::TreeNode;
 
 pub fn sorted_array_to_bst(nums: Vec<i32>) -> Option<Rc<RefCell<TreeNode>>> {
     if nums.len() == 0 {

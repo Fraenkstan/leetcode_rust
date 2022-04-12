@@ -1,4 +1,3 @@
-
 mod topic_551;
 mod topic_552;
 mod topic_553;
@@ -37,18 +36,30 @@ mod tests {
     #[test]
     fn solution_554() {
         println!("{}", least_bricks(vec![vec![1], vec![1], vec![1]]));
-        println!("{}", least_bricks(vec![vec![1,2,2,1], vec![3,1,2], vec![1,3,2],
-                                         vec![2,4], vec![3,1,2], vec![1,3,1,1]]));
+        println!(
+            "{}",
+            least_bricks(vec![
+                vec![1, 2, 2, 1],
+                vec![3, 1, 2],
+                vec![1, 3, 2],
+                vec![2, 4],
+                vec![3, 1, 2],
+                vec![1, 3, 1, 1]
+            ])
+        );
     }
 
     #[test]
     fn solution_557() {
-        println!("{}", reverse_words("Let's take LeetCode contest".to_string()));
+        println!(
+            "{}",
+            reverse_words("Let's take LeetCode contest".to_string())
+        );
     }
 
     #[test]
     fn solution_560() {
-        println!("{}", subarray_sum(vec![1,1,1], 2));
-        println!("{}", subarray_sum(vec![-1,-1,1], 0));
+        println!("{}", subarray_sum(vec![1, 1, 1], 2));
+        println!("{}", subarray_sum(vec![-1, -1, 1], 0));
     }
 }

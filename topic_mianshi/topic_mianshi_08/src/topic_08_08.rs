@@ -10,7 +10,12 @@ pub fn permutation(s: String) -> Vec<String> {
     ans
 }
 
-unsafe fn dfs(ans: &mut Vec<String>, path: &mut Vec<u8>, chars: &mut Vec<u8>, set: &mut HashSet<Vec<u8>>) {
+unsafe fn dfs(
+    ans: &mut Vec<String>,
+    path: &mut Vec<u8>,
+    chars: &mut Vec<u8>,
+    set: &mut HashSet<Vec<u8>>,
+) {
     if chars.is_empty() {
         ans.push(String::from_utf8_unchecked(path.clone()));
     }

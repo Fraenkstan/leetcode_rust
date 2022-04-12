@@ -1,4 +1,3 @@
-
 mod topic_62;
 mod topic_63;
 mod topic_64;
@@ -23,15 +22,24 @@ mod tests {
 
     #[test]
     fn solution_63() {
-        println!("{}", unique_paths_with_obstacles(vec![vec![0,0,0], vec![0,1,0], vec![0,0,0]]));
-        println!("{}", unique_paths_with_obstacles(vec![vec![0,1], vec![0,0]]));
-        println!("{}", unique_paths_with_obstacles(vec![vec![0,0]]));
+        println!(
+            "{}",
+            unique_paths_with_obstacles(vec![vec![0, 0, 0], vec![0, 1, 0], vec![0, 0, 0]])
+        );
+        println!(
+            "{}",
+            unique_paths_with_obstacles(vec![vec![0, 1], vec![0, 0]])
+        );
+        println!("{}", unique_paths_with_obstacles(vec![vec![0, 0]]));
     }
 
     #[test]
     fn solution_64() {
-        println!("{}", min_path_sum(vec![vec![1,3,1], vec![1,5,1], vec![4,2,1]]));
-        println!("{}", min_path_sum(vec![vec![1,2,3], vec![4,5,6]]));
+        println!(
+            "{}",
+            min_path_sum(vec![vec![1, 3, 1], vec![1, 5, 1], vec![4, 2, 1]])
+        );
+        println!("{}", min_path_sum(vec![vec![1, 2, 3], vec![4, 5, 6]]));
     }
 
     #[test]

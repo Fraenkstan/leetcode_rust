@@ -1,5 +1,3 @@
-
-
 pub fn pile_box(mut box_: Vec<Vec<i32>>) -> i32 {
     let n = box_.len();
     box_.sort_by(|a, b| {
@@ -11,7 +9,7 @@ pub fn pile_box(mut box_: Vec<Vec<i32>>) -> i32 {
             }
         } else {
             a[0].cmp(&b[0])
-        }
+        };
     });
     println!("{:?}", box_);
     let mut dp = vec![0; n + 1];
@@ -29,4 +27,3 @@ pub fn pile_box(mut box_: Vec<Vec<i32>>) -> i32 {
     }
     ans
 }
-

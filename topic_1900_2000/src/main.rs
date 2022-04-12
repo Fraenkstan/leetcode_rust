@@ -12,6 +12,6 @@ mod test {
     #[test]
     fn solution_1984() {
         println!("{}", minimum_difference(vec![90], 1));
-        println!("{}", minimum_difference(vec![9,4,1,7], 2));
+        println!("{}", minimum_difference(vec![9, 4, 1, 7], 2));
     }
 }

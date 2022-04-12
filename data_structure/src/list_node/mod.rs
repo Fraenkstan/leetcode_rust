@@ -1,5 +1,5 @@
-use std::fmt::{Display, Formatter};
 use std::fmt;
+use std::fmt::{Display, Formatter};
 
 #[derive(Debug, Clone, Eq, PartialEq)]
 pub struct ListNode<T> {
@@ -7,9 +7,10 @@ pub struct ListNode<T> {
     next: Option<Box<ListNode<T>>>,
 }
 
-impl <T> Display for ListNode<T>
-    where T : Display {
-
+impl<T> Display for ListNode<T>
+where
+    T: Display,
+{
     fn fmt(&self, f: &mut Formatter<'_>) -> fmt::Result {
         return match &self.next {
             None => {
@@ -18,12 +19,11 @@ impl <T> Display for ListNode<T>
             Some(next) => {
                 write!(f, "{} -> {}", self.val, next)
             }
-        }
+        };
     }
 }
 
 impl<T> ListNode<T> {
-
     pub fn new(val: T) -> ListNode<T> {
         ListNode { val, next: None }
     }

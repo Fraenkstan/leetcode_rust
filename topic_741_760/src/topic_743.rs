@@ -1,5 +1,3 @@
-
-
 pub fn network_delay_time(times: Vec<Vec<i32>>, n: i32, k: i32) -> i32 {
     let mut to_time = vec![vec![]; n as usize + 1];
     let mut stack = vec![k as usize];

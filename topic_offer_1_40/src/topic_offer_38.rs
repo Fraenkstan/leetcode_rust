@@ -1,4 +1,3 @@
-
 pub fn permutation(mut s: String) -> Vec<String> {
     let n = s.len();
     let mut ans = vec![];
@@ -10,7 +9,14 @@ pub fn permutation(mut s: String) -> Vec<String> {
     ans
 }
 
-fn dfs(pos: usize, ans: &mut Vec<String>, t: &mut String, visited: &mut Vec<bool>, n: usize, s: &[u8]) {
+fn dfs(
+    pos: usize,
+    ans: &mut Vec<String>,
+    t: &mut String,
+    visited: &mut Vec<bool>,
+    n: usize,
+    s: &[u8],
+) {
     if pos == n {
         ans.push(t.clone());
         return;
@@ -37,7 +43,9 @@ pub fn permutation_1(mut s: String) -> Vec<String> {
             s.push(*c as char);
         });
         ans.push(s);
-        if !next_permutation(arr) { break }
+        if !next_permutation(arr) {
+            break;
+        }
     }
     ans
 }

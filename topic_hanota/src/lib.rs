@@ -18,14 +18,23 @@ mod tests {
     }
 }
 
-
-pub fn hanota(a: &mut Vec<i32>, b: &mut Vec<i32>, c: &mut Vec<i32>) -> Vec<HashMap<String, Vec<i32>>> {
-    let mut records : Vec<HashMap<String, Vec<i32>>> = vec![];
+pub fn hanota(
+    a: &mut Vec<i32>,
+    b: &mut Vec<i32>,
+    c: &mut Vec<i32>,
+) -> Vec<HashMap<String, Vec<i32>>> {
+    let mut records: Vec<HashMap<String, Vec<i32>>> = vec![];
     move_plate(a.len(), a, b, c, &mut records);
     records
 }
 
-fn move_plate(num: usize, a: &mut Vec<i32>, b: &mut Vec<i32>, c: &mut Vec<i32>, records: &mut Vec<HashMap<String, Vec<i32>>>) {
+fn move_plate(
+    num: usize,
+    a: &mut Vec<i32>,
+    b: &mut Vec<i32>,
+    c: &mut Vec<i32>,
+    records: &mut Vec<HashMap<String, Vec<i32>>>,
+) {
     if num == 1 {
         let n = a.pop().unwrap();
         c.push(n);
@@ -41,4 +50,3 @@ fn move_plate(num: usize, a: &mut Vec<i32>, b: &mut Vec<i32>, c: &mut Vec<i32>, 
     record.insert(String::from("c"), c.clone());
     records.push(record);
 }
-

@@ -1,5 +1,3 @@
-
-
 pub fn remove_kdigits(num: String, mut k: i32) -> String {
     let mut v = vec![];
     for c in num.chars() {

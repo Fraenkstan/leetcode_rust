@@ -6,9 +6,9 @@ pub fn check_permutation(s1: String, s2: String) -> bool {
     if map1.len() != map2.len() {
         return false;
     }
-    map1.iter().zip(map2.iter()).all(|((k1, v1), (k2, v2))| {
-        k1 == k2 && v1 == v2
-    })
+    map1.iter()
+        .zip(map2.iter())
+        .all(|((k1, v1), (k2, v2))| k1 == k2 && v1 == v2)
 }
 
 fn to_map(s: String) -> BTreeMap<char, i32> {

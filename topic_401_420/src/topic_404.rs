@@ -1,5 +1,5 @@
-use std::rc::Rc;
 use std::cell::RefCell;
+use std::rc::Rc;
 
 #[derive(Debug, PartialEq, Eq)]
 pub struct TreeNode {
@@ -27,11 +27,13 @@ pub fn sum_of_left_leaves(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
             (Some(_), Some(_)) => {
                 add(&rb.left, v, true);
                 add(&rb.right, v, false);
-            },
+            }
             (Some(_), None) => add(&rb.left, v, true),
             (None, Some(_)) => add(&rb.right, v, false),
-            (None, None) => if is {
-                *v += rb.val;
+            (None, None) => {
+                if is {
+                    *v += rb.val;
+                }
             }
         }
     }

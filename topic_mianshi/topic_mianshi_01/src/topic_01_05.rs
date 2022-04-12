@@ -1,6 +1,3 @@
-
-
-
 pub fn one_edit_away(first: String, second: String) -> bool {
     let first = first.into_bytes();
     let second = second.into_bytes();
@@ -23,12 +20,14 @@ pub fn one_edit_away(first: String, second: String) -> bool {
                 }
             }
         }
-    }
-    else if len1 == len2 {
-        return first.iter().zip(second.iter())
-            .filter(|(c1, c2)| c1 != c2).count() <= 1;
-    }
-    else {
+    } else if len1 == len2 {
+        return first
+            .iter()
+            .zip(second.iter())
+            .filter(|(c1, c2)| c1 != c2)
+            .count()
+            <= 1;
+    } else {
         if len2 - len1 > 1 {
             return false;
         }

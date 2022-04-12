@@ -1,10 +1,8 @@
-
-
 pub fn find_max_average(nums: Vec<i32>, k: i32) -> f64 {
     let mut sum: f64 = f64::MIN;
-    let _it = nums.windows(k as usize).for_each(|x|
-        sum = sum.max(x.iter().sum::<i32>() as f64)
-    );
+    let _it = nums
+        .windows(k as usize)
+        .for_each(|x| sum = sum.max(x.iter().sum::<i32>() as f64));
     sum / k as f64
 }
 

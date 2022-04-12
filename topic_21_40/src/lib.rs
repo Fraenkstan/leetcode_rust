@@ -1,4 +1,3 @@
-
 mod topic_22;
 mod topic_26;
 mod topic_27;
@@ -34,14 +33,20 @@ mod tests {
     fn solution_26() {
         println!("{}", remove_duplicates(&mut vec![1, 1, 2]));
         println!("{}", remove_duplicates_1(&mut vec![1, 1, 2]));
-        println!("{}", remove_duplicates(&mut vec![0,0,1,1,1,2,2,3,3,4]));
-        println!("{}", remove_duplicates_1(&mut vec![0,0,1,1,1,2,2,3,3,4]));
+        println!(
+            "{}",
+            remove_duplicates(&mut vec![0, 0, 1, 1, 1, 2, 2, 3, 3, 4])
+        );
+        println!(
+            "{}",
+            remove_duplicates_1(&mut vec![0, 0, 1, 1, 1, 2, 2, 3, 3, 4])
+        );
     }
 
     #[test]
     fn solution_27() {
-        println!("{}", remove_element(&mut vec![3,2,2,3], 3));
-        println!("{}", remove_element(&mut vec![0,1,2,2,3,0,4,2], 2));
+        println!("{}", remove_element(&mut vec![3, 2, 2, 3], 3));
+        println!("{}", remove_element(&mut vec![0, 1, 2, 2, 3, 0, 4, 2], 2));
     }
 
     #[test]
@@ -50,11 +55,11 @@ mod tests {
         next_permutation(&mut test1);
         println!("{:?}", test1);
 
-        let mut test2 = vec![3,2,1];
+        let mut test2 = vec![3, 2, 1];
         next_permutation(&mut test2);
         println!("{:?}", test2);
 
-        let mut test3 = vec![1,1,5];
+        let mut test3 = vec![1, 1, 5];
         next_permutation(&mut test3);
         println!("{:?}", test3);
 
@@ -65,56 +70,56 @@ mod tests {
 
     #[test]
     fn solution_33() {
-        println!("{}", search(vec![4,5,6,7,0,1,2], 0));
-        println!("{}", search(vec![4,5,6,7,0,1,2], 3));
+        println!("{}", search(vec![4, 5, 6, 7, 0, 1, 2], 0));
+        println!("{}", search(vec![4, 5, 6, 7, 0, 1, 2], 3));
         println!("{}", search(vec![1], 0));
-        println!("{}", search(vec![3,5,1], 3));
+        println!("{}", search(vec![3, 5, 1], 3));
     }
 
     #[test]
     fn solution_34() {
-        println!("{:?}", search_range(vec![5,7,7,8,8,10], 8));
-        println!("{:?}", search_range(vec![5,7,7,8,8,10], 6));
-        println!("{:?}", search_range(vec![1,1,1], 1));
+        println!("{:?}", search_range(vec![5, 7, 7, 8, 8, 10], 8));
+        println!("{:?}", search_range(vec![5, 7, 7, 8, 8, 10], 6));
+        println!("{:?}", search_range(vec![1, 1, 1], 1));
         println!("{:?}", search_range(vec![], 0));
-        println!("{:?}", search_range(vec![1,4], 4));
-        println!("{:?}", search_range(vec![2,2], 3));
+        println!("{:?}", search_range(vec![1, 4], 4));
+        println!("{:?}", search_range(vec![2, 2], 3));
     }
 
     #[test]
     fn solution_35() {
-        println!("{}", search_insert(vec![1,3,5,6], 5));
-        println!("{}", search_insert(vec![1,3,5,6], 2));
-        println!("{}", search_insert(vec![1,3,5,6], 7));
-        println!("{}", search_insert(vec![1,3,5,6], 0));
-        println!("{}", search_insert(vec![1,3], 0));
-        println!("{}", search_insert(vec![1,3], 2));
-        println!("{}", search_insert(vec![3,5,7,9,10], 8));
+        println!("{}", search_insert(vec![1, 3, 5, 6], 5));
+        println!("{}", search_insert(vec![1, 3, 5, 6], 2));
+        println!("{}", search_insert(vec![1, 3, 5, 6], 7));
+        println!("{}", search_insert(vec![1, 3, 5, 6], 0));
+        println!("{}", search_insert(vec![1, 3], 0));
+        println!("{}", search_insert(vec![1, 3], 2));
+        println!("{}", search_insert(vec![3, 5, 7, 9, 10], 8));
     }
 
     #[test]
     fn solution_36() {
         let board1 = vec![
-            vec!['5','3','.','.','7','.','.','.','.'],
-            vec!['6','.','.','1','9','5','.','.','.'],
-            vec!['.','9','8','.','.','.','.','6','.'],
-            vec!['8','.','.','.','6','.','.','.','3'],
-            vec!['4','.','.','8','.','3','.','.','1'],
-            vec!['7','.','.','.','2','.','.','.','6'],
-            vec!['.','6','.','.','.','.','2','8','.'],
-            vec!['.','.','.','4','1','9','.','.','5'],
-            vec!['.','.','.','.','8','.','.','7','9']
+            vec!['5', '3', '.', '.', '7', '.', '.', '.', '.'],
+            vec!['6', '.', '.', '1', '9', '5', '.', '.', '.'],
+            vec!['.', '9', '8', '.', '.', '.', '.', '6', '.'],
+            vec!['8', '.', '.', '.', '6', '.', '.', '.', '3'],
+            vec!['4', '.', '.', '8', '.', '3', '.', '.', '1'],
+            vec!['7', '.', '.', '.', '2', '.', '.', '.', '6'],
+            vec!['.', '6', '.', '.', '.', '.', '2', '8', '.'],
+            vec!['.', '.', '.', '4', '1', '9', '.', '.', '5'],
+            vec!['.', '.', '.', '.', '8', '.', '.', '7', '9'],
         ];
         let board2 = vec![
-            vec!['8','3','.','.','7','.','.','.','.'],
-            vec!['6','.','.','1','9','5','.','.','.'],
-            vec!['.','9','8','.','.','.','.','6','.'],
-            vec!['8','.','.','.','6','.','.','.','3'],
-            vec!['4','.','.','8','.','3','.','.','1'],
-            vec!['7','.','.','.','2','.','.','.','6'],
-            vec!['.','6','.','.','.','.','2','8','.'],
-            vec!['.','.','.','4','1','9','.','.','5'],
-            vec!['.','.','.','.','8','.','.','7','9']
+            vec!['8', '3', '.', '.', '7', '.', '.', '.', '.'],
+            vec!['6', '.', '.', '1', '9', '5', '.', '.', '.'],
+            vec!['.', '9', '8', '.', '.', '.', '.', '6', '.'],
+            vec!['8', '.', '.', '.', '6', '.', '.', '.', '3'],
+            vec!['4', '.', '.', '8', '.', '3', '.', '.', '1'],
+            vec!['7', '.', '.', '.', '2', '.', '.', '.', '6'],
+            vec!['.', '6', '.', '.', '.', '.', '2', '8', '.'],
+            vec!['.', '.', '.', '4', '1', '9', '.', '.', '5'],
+            vec!['.', '.', '.', '.', '8', '.', '.', '7', '9'],
         ];
         println!("{}", is_valid_sudoku(board1));
         println!("{}", is_valid_sudoku(board2));
@@ -122,13 +127,13 @@ mod tests {
 
     #[test]
     fn solution_39() {
-        println!("{:?}", combination_sum(vec![2,3,6,7], 7));
-        println!("{:?}", combination_sum(vec![2,3,5], 8));
+        println!("{:?}", combination_sum(vec![2, 3, 6, 7], 7));
+        println!("{:?}", combination_sum(vec![2, 3, 5], 8));
     }
 
     #[test]
     fn solution_40() {
-        println!("{:?}", combination_sum2(vec![10,1,2,7,6,1,5], 8));
-        println!("{:?}", combination_sum2(vec![2,5,2,1,2], 5));
+        println!("{:?}", combination_sum2(vec![10, 1, 2, 7, 6, 1, 5], 8));
+        println!("{:?}", combination_sum2(vec![2, 5, 2, 1, 2], 5));
     }
 }

@@ -1,5 +1,3 @@
-
-
 pub fn corp_flight_bookings(bookings: Vec<Vec<i32>>, n: i32) -> Vec<i32> {
     bookings.iter().fold(vec![0; n as usize], |mut ans, book| {
         for i in book[0] as usize..=book[1] as usize {

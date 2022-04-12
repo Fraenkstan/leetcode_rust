@@ -1,7 +1,7 @@
-use std::rc::Rc;
-use std::cell::RefCell;
 use crate::TreeNode;
+use std::cell::RefCell;
 use std::collections::VecDeque;
+use std::rc::Rc;
 
 pub fn bst_sequences(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<Vec<i32>> {
     let mut ans = vec![];
@@ -9,7 +9,9 @@ pub fn bst_sequences(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<Vec<i32>> {
         let mut queue = VecDeque::new();
         queue.push_back(root);
         dfs(&mut ans, &mut queue, &mut vec![]);
-    } else { ans = vec![vec![]] }
+    } else {
+        ans = vec![vec![]]
+    }
     ans
 }
 

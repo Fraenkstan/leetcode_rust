@@ -1,5 +1,3 @@
-
-
 pub fn num_subarrays_with_sum(a: Vec<i32>, s: i32) -> i32 {
     if a.len() == 0 {
         return 0;
@@ -30,4 +28,3 @@ pub fn num_subarrays_with_sum(a: Vec<i32>, s: i32) -> i32 {
     }
     res
 }
-

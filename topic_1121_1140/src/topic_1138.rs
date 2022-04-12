@@ -1,12 +1,11 @@
-
 pub fn find_num_of_valid_words(words: Vec<String>, puzzles: Vec<String>) -> Vec<i32> {
     match_bytes(
         &words.iter().map(String::as_str).collect::<Vec<_>>(),
         &puzzles.iter().map(String::as_str).collect::<Vec<_>>(),
     )
-        .into_iter()
-        .map(|e| e as i32)
-        .collect()
+    .into_iter()
+    .map(|e| e as i32)
+    .collect()
 }
 
 fn match_bytes(words: &[&str], puzzles: &[&str]) -> Vec<usize> {

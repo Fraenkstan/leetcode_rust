@@ -1,15 +1,14 @@
 use std::collections::BTreeMap;
 
 struct StreamRank {
-    map: BTreeMap<i32, i32>
+    map: BTreeMap<i32, i32>,
 }
 
 #[allow(unused)]
 impl StreamRank {
-
     fn new() -> Self {
-        StreamRank{
-            map: BTreeMap::new()
+        StreamRank {
+            map: BTreeMap::new(),
         }
     }
 
@@ -18,6 +17,10 @@ impl StreamRank {
     }
 
     fn get_rank_of_number(&self, x: i32) -> i32 {
-        self.map.iter().filter(|(&k, _v)| k <= x).map(|(_k, v)| v).sum()
+        self.map
+            .iter()
+            .filter(|(&k, _v)| k <= x)
+            .map(|(_k, v)| v)
+            .sum()
     }
 }

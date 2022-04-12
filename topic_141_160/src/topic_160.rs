@@ -8,4 +8,3 @@ pub fn get_intersection_node(
 ) -> Option<Box<ListNode<i32>>> {
     None
 }
-

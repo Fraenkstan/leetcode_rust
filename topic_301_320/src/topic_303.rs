@@ -1,4 +1,3 @@
-
 #[allow(unused)]
 struct NumArray {
     nums: Vec<i32>,
@@ -11,7 +10,6 @@ struct NumArray {
  */
 #[allow(unused)]
 impl NumArray {
-
     fn new(nums: Vec<i32>) -> Self {
         let mut subscript = vec![0; nums.len()];
         let mut sum = 0;

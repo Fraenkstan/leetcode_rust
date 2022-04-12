@@ -1,14 +1,10 @@
-
 pub struct SortedStack {
-    stack: Vec<i32>
+    stack: Vec<i32>,
 }
 
 impl SortedStack {
-
     pub(crate) fn new() -> Self {
-        SortedStack{
-            stack: vec![]
-        }
+        SortedStack { stack: vec![] }
     }
 
     pub(crate) fn push(&mut self, val: i32) {

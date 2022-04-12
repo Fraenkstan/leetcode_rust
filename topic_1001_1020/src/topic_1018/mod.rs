@@ -1,5 +1,3 @@
-
-
 pub fn prefixes_div_by5(a: Vec<i32>) -> Vec<bool> {
     let mut result = Vec::with_capacity(a.len());
     let mut n = 0;
@@ -22,12 +20,10 @@ fn prefixes_div_by5_1(a: Vec<i32>) -> Vec<bool> {
 
 pub fn prefixes_div_by5_2(a: Vec<i32>) -> Vec<bool> {
     let mut result: Vec<bool> = vec![];
-    a.iter()
-        .fold(0, |res, i|
-            {
-                let res = (2 * res + i) % 5;
-                result.push(res == 0);
-                res
-            });
+    a.iter().fold(0, |res, i| {
+        let res = (2 * res + i) % 5;
+        result.push(res == 0);
+        res
+    });
     result
 }

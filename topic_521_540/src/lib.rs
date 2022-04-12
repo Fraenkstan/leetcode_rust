@@ -36,14 +36,18 @@ mod tests {
 
     #[test]
     fn solution_524() {
-        let dictionary = vec!["ale".to_string(), "apple".to_string(),
-                              "monkey".to_string(), "plea".to_string()];
+        let dictionary = vec![
+            "ale".to_string(),
+            "apple".to_string(),
+            "monkey".to_string(),
+            "plea".to_string(),
+        ];
         println!("{}", find_longest_word("abpcplea".to_string(), dictionary));
     }
 
     #[test]
     fn topic_525() {
-        let nums = vec![0,1,0];
+        let nums = vec![0, 1, 0];
         println!("{}", find_max_length(nums));
     }
 
@@ -52,7 +56,10 @@ mod tests {
         for i in 1usize..16 {
             println!("count_ones({}): {}", i, i32::count_ones(i as i32));
             println!("dp result: {}", count_arrangement(i as i32));
-            println!("backstrace result: {}", count_arrangement_backstrace(i as i32));
+            println!(
+                "backstrace result: {}",
+                count_arrangement_backstrace(i as i32)
+            );
         }
     }
 
@@ -60,7 +67,7 @@ mod tests {
     fn solution_528() {
         let test = Solution::new(vec![1]);
         println!("{}", test.pick_index());
-        let test1 = Solution::new(vec![1,3]);
+        let test1 = Solution::new(vec![1, 3]);
         println!("{}", test1.pick_index());
         println!("{}", test1.pick_index());
         println!("{}", test1.pick_index());
@@ -70,13 +77,19 @@ mod tests {
 
     #[test]
     fn solution_537() {
-        println!("{}", complex_number_multiply("1+1i".to_string(), "1+1i".to_string()));
-        println!("{}", complex_number_multiply("1+-1i".to_string(), "1+-1i".to_string()));
+        println!(
+            "{}",
+            complex_number_multiply("1+1i".to_string(), "1+1i".to_string())
+        );
+        println!(
+            "{}",
+            complex_number_multiply("1+-1i".to_string(), "1+-1i".to_string())
+        );
     }
 
     #[test]
     fn solution_540() {
-        println!("{}", single_non_duplicate(vec![1,1,2,3,3,4,4,8,8]));
-        println!("{}", single_non_duplicate(vec![3,3,7,7,10,11,11]));
+        println!("{}", single_non_duplicate(vec![1, 1, 2, 3, 3, 4, 4, 8, 8]));
+        println!("{}", single_non_duplicate(vec![3, 3, 7, 7, 10, 11, 11]));
     }
 }

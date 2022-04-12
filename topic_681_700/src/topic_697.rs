@@ -10,7 +10,9 @@ pub fn find_shortest_sub_array(nums: Vec<i32>) -> i32 {
     let mut len = 0;
     for i in 0..nums.len() {
         // 数据第一次出现则插入数据。
-        if let None = map.get(&nums[i]) { map.insert(nums[i], (1, i)); }
+        if let None = map.get(&nums[i]) {
+            map.insert(nums[i], (1, i));
+        }
         // 对已插入hashmap的数据进行处理。
         if let Some(&(num, index)) = map.get(&nums[i]) {
             // 若出现次数相同则取最小的len.

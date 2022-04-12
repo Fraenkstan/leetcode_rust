@@ -1,5 +1,3 @@
-
-
 pub fn reverse_vowels(s: String) -> String {
     let mut vec = s.chars().collect::<Vec<char>>();
     let (mut left, mut right) = (0 as usize, vec.len() - 1);
@@ -9,7 +7,7 @@ pub fn reverse_vowels(s: String) -> String {
                 vec.swap(left, right);
                 left += 1;
                 right -= 1;
-            },
+            }
             (true, false) => right -= 1,
             (false, true) => left += 1,
             (false, false) => {
@@ -25,6 +23,6 @@ fn is_vowel(c: char) -> bool {
     match c {
         'a' | 'e' | 'i' | 'o' | 'u' => true,
         'A' | 'E' | 'I' | 'O' | 'U' => true,
-        _ => false
+        _ => false,
     }
 }

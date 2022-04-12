@@ -1,4 +1,3 @@
-
 pub fn last_stone_weight_ii(stones: Vec<i32>) -> i32 {
     let length = stones.len();
     if length == 0 {
@@ -30,7 +29,7 @@ pub fn last_stone_weight_ii(stones: Vec<i32>) -> i32 {
 pub fn solulast_stone_weight_ii_2(stones: Vec<i32>) -> i32 {
     let sum = stones.iter().sum::<i32>();
     let max_weight = (sum / 2) as usize;
-    let mut dp = vec![0 ; max_weight + 1];
+    let mut dp = vec![0; max_weight + 1];
     for stone in stones {
         for b in (stone..=max_weight as i32).rev() {
             dp[b as usize] = dp[b as usize].max(dp[(b - stone) as usize] + stone);

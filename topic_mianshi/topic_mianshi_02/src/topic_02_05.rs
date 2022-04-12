@@ -1,11 +1,14 @@
 use crate::ListNode;
 
-pub fn add_two_numbers(l1: Option<Box<ListNode>>, l2: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
+pub fn add_two_numbers(
+    l1: Option<Box<ListNode>>,
+    l2: Option<Box<ListNode>>,
+) -> Option<Box<ListNode>> {
     let mut head = Some(Box::new(ListNode::new(0)));
     let (mut p, mut q, mut carry) = (l1, l2, 0);
     let mut current = head.as_mut();
     while p.is_some() || q.is_some() {
-        let mut sum  = carry;
+        let mut sum = carry;
         if let Some(v) = p {
             sum += v.val;
             p = v.next;

@@ -1,4 +1,3 @@
-
 fn back_trace(s: String, n: usize, right: usize, left: usize, result: &mut Vec<String>) {
     if s.len() == 2 * n {
         result.push(s);

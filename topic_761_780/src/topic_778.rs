@@ -1,7 +1,10 @@
-struct Heap(Vec<Vec<i32>>, std::collections::BinaryHeap<(i32, [u8; 2])>, u8);
+struct Heap(
+    Vec<Vec<i32>>,
+    std::collections::BinaryHeap<(i32, [u8; 2])>,
+    u8,
+);
 
 impl Heap {
-
     fn new(mut grid: Vec<Vec<i32>>, l: u8) -> Self {
         let mut h = std::collections::BinaryHeap::new();
         h.push((-grid[0][0], [0, 0]));
@@ -23,14 +26,23 @@ pub fn swim_in_water(grid: Vec<Vec<i32>>) -> i32 {
     let mut ans = 0;
     while let Some((deep, [v0, v1])) = t.1.pop() {
         ans = ans.min(deep);
-        if v0 == v1 && v0 == l { break; }
+        if v0 == v1 && v0 == l {
+            break;
+        }
         match (v0, v1) {
-            (0, 0) => (&[[v0, v1 + 1], [v0 + 1, v1]]).iter().for_each(|&x| t.push(x)),
-            (0, _) => (&[[v0, v1 + 1], [v0 + 1, v1], [v0, v1 - 1]]).iter().for_each(|&x| t.push(x)),
-            (_, 0) => (&[[v0, v1 + 1], [v0 + 1, v1], [v0 - 1, v1]]).iter().for_each(|&x| t.push(x)),
-            (_, _) => (&[[v0, v1 + 1], [v0, v1 - 1], [v0 + 1, v1], [v0 - 1, v1]]).iter().for_each(|&x| t.push(x))
+            (0, 0) => (&[[v0, v1 + 1], [v0 + 1, v1]])
+                .iter()
+                .for_each(|&x| t.push(x)),
+            (0, _) => (&[[v0, v1 + 1], [v0 + 1, v1], [v0, v1 - 1]])
+                .iter()
+                .for_each(|&x| t.push(x)),
+            (_, 0) => (&[[v0, v1 + 1], [v0 + 1, v1], [v0 - 1, v1]])
+                .iter()
+                .for_each(|&x| t.push(x)),
+            (_, _) => (&[[v0, v1 + 1], [v0, v1 - 1], [v0 + 1, v1], [v0 - 1, v1]])
+                .iter()
+                .for_each(|&x| t.push(x)),
         }
     }
     -ans
 }
-

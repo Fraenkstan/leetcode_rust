@@ -1,4 +1,3 @@
-
 mod topic_121;
 
 #[cfg(test)]
@@ -8,7 +7,7 @@ mod tests {
 
     #[test]
     fn solution_121() {
-        println!("{}", max_profit(vec![7,1,5,3,6,4]));
-        println!("{}", max_profit(vec![7,6,4,3,1]));
+        println!("{}", max_profit(vec![7, 1, 5, 3, 6, 4]));
+        println!("{}", max_profit(vec![7, 6, 4, 3, 1]));
     }
 }

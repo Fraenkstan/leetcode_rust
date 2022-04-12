@@ -1,6 +1,7 @@
-
 pub fn reverse_only_letters(s: String) -> String {
-    if s.len() == 0 { return "".to_string(); }
+    if s.len() == 0 {
+        return "".to_string();
+    }
     let mut cv: Vec<char> = s.chars().collect();
     let mut p = 0;
     let mut q = s.len() - 1;

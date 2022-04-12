@@ -4,20 +4,20 @@ use std::str::FromStr;
 
 #[derive(Debug, PartialEq, Eq)]
 pub struct TreeNode {
-  pub val: i32,
-  pub left: Option<Rc<RefCell<TreeNode>>>,
-  pub right: Option<Rc<RefCell<TreeNode>>>,
+    pub val: i32,
+    pub left: Option<Rc<RefCell<TreeNode>>>,
+    pub right: Option<Rc<RefCell<TreeNode>>>,
 }
 
 impl TreeNode {
-  #[inline]
-  pub fn new(val: i32) -> Self {
-    TreeNode {
-      val,
-      left: None,
-      right: None
+    #[inline]
+    pub fn new(val: i32) -> Self {
+        TreeNode {
+            val,
+            left: None,
+            right: None,
+        }
     }
-  }
 }
 
 pub(crate) struct Codec {}
@@ -52,7 +52,9 @@ impl Codec {
 }
 
 fn new_node(v: &str) -> Option<Rc<RefCell<TreeNode>>> {
-    Some(Rc::new(RefCell::new(TreeNode::new(i32::from_str(v).unwrap()))))
+    Some(Rc::new(RefCell::new(TreeNode::new(
+        i32::from_str(v).unwrap(),
+    ))))
 }
 
 fn ser(root: Option<Rc<RefCell<TreeNode>>>, result: &mut String) {

@@ -9,7 +9,7 @@ pub fn find_whether_exists_path(n: i32, graph: Vec<Vec<i32>>, start: i32, target
     let mut queue = vec![];
     queue.push(start);
     while !queue.is_empty() {
-        let from  = queue.remove(0);
+        let from = queue.remove(0);
         for to in graph_map[from as usize].iter() {
             if !visited[*to as usize] {
                 if *to == target {

@@ -1,12 +1,12 @@
-use std::collections::{BinaryHeap, HashMap};
 use std::cmp::Reverse;
+use std::collections::{BinaryHeap, HashMap};
 
 pub fn median_sliding_window(nums: Vec<i32>, k: i32) -> Vec<f64> {
     let mut ret: Vec<f64> = vec![];
     let mut left_heap_max = BinaryHeap::new();
     let mut right_heap_min: BinaryHeap<Reverse<i32>> = BinaryHeap::new();
-    let flag = if k % 2 == 0 { true } else { false };  // if flag is false, left has 1 more
-    let mut balance = k % 2;   // maintain 2 binary heap is to keep balance 0 
+    let flag = if k % 2 == 0 { true } else { false }; // if flag is false, left has 1 more
+    let mut balance = k % 2; // maintain 2 binary heap is to keep balance 0
     let mut map: HashMap<i32, i32> = HashMap::new();
 
     // init heaps
@@ -14,22 +14,49 @@ pub fn median_sliding_window(nums: Vec<i32>, k: i32) -> Vec<f64> {
         left_heap_max.push(nums[i]);
         balance -= 1;
     }
-    balance_heaps(&mut left_heap_max, &mut right_heap_min, &mut balance, &mut map);
+    balance_heaps(
+        &mut left_heap_max,
+        &mut right_heap_min,
+        &mut balance,
+        &mut map,
+    );
     ret.push(get_median(&left_heap_max, &right_heap_min, flag));
 
     // iter
     for i in 1..nums.len() - k as usize + 1 {
-        proc_outdate(nums[i - 1], &mut left_heap_max, &mut right_heap_min, &mut map, &mut balance);
-        push_new(nums[i + k as usize - 1], &mut left_heap_max, &mut right_heap_min, &mut balance);
-        balance_heaps(&mut left_heap_max, &mut right_heap_min, &mut balance, &mut map);
+        proc_outdate(
+            nums[i - 1],
+            &mut left_heap_max,
+            &mut right_heap_min,
+            &mut map,
+            &mut balance,
+        );
+        push_new(
+            nums[i + k as usize - 1],
+            &mut left_heap_max,
+            &mut right_heap_min,
+            &mut balance,
+        );
+        balance_heaps(
+            &mut left_heap_max,
+            &mut right_heap_min,
+            &mut balance,
+            &mut map,
+        );
         ret.push(get_median(&left_heap_max, &right_heap_min, flag));
     }
     ret
 }
 
-fn balance_heaps(left: &mut BinaryHeap<i32>, right: &mut BinaryHeap<Reverse<i32>>, balance: &mut i32,
-                 map: &mut HashMap<i32, i32>) {
-    if *balance == 0 { return; }
+fn balance_heaps(
+    left: &mut BinaryHeap<i32>,
+    right: &mut BinaryHeap<Reverse<i32>>,
+    balance: &mut i32,
+    map: &mut HashMap<i32, i32>,
+) {
+    if *balance == 0 {
+        return;
+    }
     if *balance < 0 {
         while *balance != 0 {
             right.push(Reverse(left.pop().unwrap()));
@@ -53,8 +80,13 @@ fn get_median(left: &BinaryHeap<i32>, right: &BinaryHeap<Reverse<i32>>, flag: bo
     }
 }
 
-fn proc_outdate(num: i32, left: &mut BinaryHeap<i32>, right: &mut BinaryHeap<Reverse<i32>>,
-                map: &mut HashMap<i32, i32>, balance: &mut i32) {
+fn proc_outdate(
+    num: i32,
+    left: &mut BinaryHeap<i32>,
+    right: &mut BinaryHeap<Reverse<i32>>,
+    map: &mut HashMap<i32, i32>,
+    balance: &mut i32,
+) {
     if let Some(x) = left.peek() {
         if num == *x {
             left.pop();
@@ -116,7 +148,12 @@ fn decrease_record(key: i32, map: &mut HashMap<i32, i32>) -> bool {
     return false;
 }
 
-fn push_new(num: i32, left: &mut BinaryHeap<i32>, right: &mut BinaryHeap<Reverse<i32>>, balance: &mut i32) {
+fn push_new(
+    num: i32,
+    left: &mut BinaryHeap<i32>,
+    right: &mut BinaryHeap<Reverse<i32>>,
+    balance: &mut i32,
+) {
     if let Some(x) = left.peek() {
         if num <= *x {
             left.push(num);

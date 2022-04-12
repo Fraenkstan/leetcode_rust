@@ -1,5 +1,5 @@
-use std::rc::Rc;
 use std::cell::RefCell;
+use std::rc::Rc;
 
 #[derive(Debug, PartialEq, Eq)]
 pub struct TreeNode {
@@ -21,33 +21,37 @@ impl TreeNode {
 }
 
 #[allow(dead_code)]
-pub fn is_subtree(root: Option<Rc<RefCell<TreeNode>>>, sub_root: Option<Rc<RefCell<TreeNode>>>)
-                  -> bool {
+pub fn is_subtree(
+    root: Option<Rc<RefCell<TreeNode>>>,
+    sub_root: Option<Rc<RefCell<TreeNode>>>,
+) -> bool {
     dfs1(&root, &sub_root)
 }
 
 fn dfs1(root: &Option<Rc<RefCell<TreeNode>>>, sub_root: &Option<Rc<RefCell<TreeNode>>>) -> bool {
     if dfs2(root, sub_root) {
-        return true
+        return true;
     }
     match root {
         Some(root_node) => {
             let root_ref = root_node.borrow();
-            dfs2(root, sub_root) || dfs1(&root_ref.left, sub_root) || dfs1(&root_ref.right, sub_root)
+            dfs2(root, sub_root)
+                || dfs1(&root_ref.left, sub_root)
+                || dfs1(&root_ref.right, sub_root)
         }
-        None => false
+        None => false,
     }
 }
 
 fn dfs2(root: &Option<Rc<RefCell<TreeNode>>>, sub_root: &Option<Rc<RefCell<TreeNode>>>) -> bool {
     match (root, sub_root) {
         (Some(root_node), Some(sub_root_node)) => {
-            let (root_ref, sub_root_ref) =
-                (root_node.borrow(), sub_root_node.borrow());
-            root_ref.val == sub_root_ref.val && dfs2(&root_ref.left, &sub_root_ref.left) &&
-                dfs2(&root_ref.right, &sub_root_ref.right)
+            let (root_ref, sub_root_ref) = (root_node.borrow(), sub_root_node.borrow());
+            root_ref.val == sub_root_ref.val
+                && dfs2(&root_ref.left, &sub_root_ref.left)
+                && dfs2(&root_ref.right, &sub_root_ref.right)
         }
         (None, None) => true,
-        _ => false
+        _ => false,
     }
 }

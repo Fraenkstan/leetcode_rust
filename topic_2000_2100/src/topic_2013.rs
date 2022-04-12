@@ -1,17 +1,16 @@
 use std::collections::HashMap;
 
 pub struct DetectSquares {
-    cnt: HashMap<i32, HashMap<i32, i32>>
+    cnt: HashMap<i32, HashMap<i32, i32>>,
 }
 
 impl DetectSquares {
-
     pub fn new() -> Self {
-        DetectSquares{
+        DetectSquares {
             cnt: {
                 let map = HashMap::new();
                 map
-            }
+            },
         }
     }
 
@@ -31,10 +30,12 @@ impl DetectSquares {
         self.cnt.iter().for_each(|(&col, col_cnt)| {
             if y != col {
                 let d = col - y;
-                res += col_cnt.get(&x).unwrap_or(&0) * y_cnt.get(&(x + d)).unwrap_or(&0) *
-                    col_cnt.get(&(x + d)).unwrap_or(&0);
-                res += col_cnt.get(&x).unwrap_or(&0) * y_cnt.get(&(x - d)).unwrap_or(&0) *
-                    col_cnt.get(&(x - d)).unwrap_or(&0);
+                res += col_cnt.get(&x).unwrap_or(&0)
+                    * y_cnt.get(&(x + d)).unwrap_or(&0)
+                    * col_cnt.get(&(x + d)).unwrap_or(&0);
+                res += col_cnt.get(&x).unwrap_or(&0)
+                    * y_cnt.get(&(x - d)).unwrap_or(&0)
+                    * col_cnt.get(&(x - d)).unwrap_or(&0);
             }
         });
         res

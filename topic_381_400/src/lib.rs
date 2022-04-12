@@ -1,4 +1,3 @@
-
 mod topic_383;
 mod topic_392;
 
@@ -17,7 +16,13 @@ mod tests {
 
     #[test]
     fn solution_392() {
-        println!("{}", is_subsequence("abd".to_string(), "ahbgdc".to_string()));
-        println!("{}", is_subsequence("axc".to_string(), "ahbgdc".to_string()));
+        println!(
+            "{}",
+            is_subsequence("abd".to_string(), "ahbgdc".to_string())
+        );
+        println!(
+            "{}",
+            is_subsequence("axc".to_string(), "ahbgdc".to_string())
+        );
     }
 }

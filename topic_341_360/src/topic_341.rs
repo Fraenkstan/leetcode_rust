@@ -1,21 +1,16 @@
-
 pub enum NestedInteger {
-  Int(i32),
-  List(Vec<NestedInteger>)
+    Int(i32),
+    List(Vec<NestedInteger>),
 }
 
 pub struct NestedIterator(Vec<i32>);
 
 impl NestedIterator {
-
     pub fn new(nested_list: Vec<NestedInteger>) -> Self {
         let mut init = vec![];
-        nested_list.into_iter().rev().for_each(|x| {
-            match x {
-                NestedInteger::Int(val) => init.push(val),
-                NestedInteger::List(vec) =>
-                    to_vec(vec).into_iter().for_each(|val| init.push(val))
-            }
+        nested_list.into_iter().rev().for_each(|x| match x {
+            NestedInteger::Int(val) => init.push(val),
+            NestedInteger::List(vec) => to_vec(vec).into_iter().for_each(|val| init.push(val)),
         });
         NestedIterator(init)
     }
@@ -31,12 +26,10 @@ impl NestedIterator {
 
 fn to_vec(x: Vec<NestedInteger>) -> Vec<i32> {
     let mut ans = vec![];
-    x.into_iter().rev().for_each(|i| {
-        match i {
-            NestedInteger::Int(val) => ans.push(val),
-            NestedInteger::List(vec) => {
-                to_vec(vec).into_iter().for_each(|val| ans.push(val));
-            }
+    x.into_iter().rev().for_each(|i| match i {
+        NestedInteger::Int(val) => ans.push(val),
+        NestedInteger::List(vec) => {
+            to_vec(vec).into_iter().for_each(|val| ans.push(val));
         }
     });
     ans

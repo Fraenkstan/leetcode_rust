@@ -1,4 +1,3 @@
-
 mod topic_263;
 mod topic_264;
 mod topic_274;
@@ -29,12 +28,12 @@ mod tests {
 
     #[test]
     fn solution_274() {
-        println!("{}", h_index(vec![3,0,6,1,5]));
+        println!("{}", h_index(vec![3, 0, 6, 1, 5]));
     }
 
     #[test]
     fn solution_275() {
-        println!("{}", h_index_2(vec![0,1,3,5,6]));
+        println!("{}", h_index_2(vec![0, 1, 3, 5, 6]));
     }
 
     #[test]

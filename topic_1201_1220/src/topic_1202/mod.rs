@@ -1,6 +1,6 @@
-use std::collections::{HashMap, BinaryHeap};
-use std::cmp::Reverse;
 use data_structure::union_find::UnionFind;
+use std::cmp::Reverse;
+use std::collections::{BinaryHeap, HashMap};
 
 pub fn smallest_string_with_swaps(s: String, pairs: Vec<Vec<i32>>) -> String {
     if pairs.len() == 0 {
@@ -19,8 +19,7 @@ pub fn smallest_string_with_swaps(s: String, pairs: Vec<Vec<i32>>) -> String {
         let root = union_find.find(i);
         if map.contains_key(&root) {
             map.get_mut(&root).unwrap().push(Reverse(s[i]));
-        }
-        else {
+        } else {
             let mut min_heap = BinaryHeap::<Reverse<u8>>::new();
             min_heap.push(Reverse(s[i]));
             map.insert(root, min_heap);

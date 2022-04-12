@@ -1,5 +1,3 @@
-
-
 pub fn is_ugly(n: i32) -> bool {
     let mut n = n;
     if n < 1 {

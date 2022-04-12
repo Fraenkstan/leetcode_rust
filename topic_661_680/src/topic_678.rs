@@ -1,4 +1,3 @@
-
 pub fn check_valid_string(s: String) -> bool {
     let chars = s.chars().collect::<Vec<char>>();
     let mut vec = vec![];
@@ -6,7 +5,7 @@ pub fn check_valid_string(s: String) -> bool {
         match chars[i] {
             '(' => {
                 vec.push('(');
-            },
+            }
             ')' => {
                 if vec.len() == 0 {
                     return false;
@@ -14,23 +13,23 @@ pub fn check_valid_string(s: String) -> bool {
                     for i in (0..vec.len()).rev() {
                         if vec[i] == '(' {
                             vec.remove(i);
-                            break
+                            break;
                         }
                     }
                 } else {
                     vec.pop();
                 }
-            },
+            }
             '*' => {
                 vec.push('*');
-            },
+            }
             _ => {}
         }
     }
     vec.iter().fold(0, |mut acc, &i| {
         if i == '(' {
             acc += 1;
-        } else  {
+        } else {
             acc = 0.max(acc - 1);
         }
         acc

@@ -2,7 +2,6 @@ mod binary_tree;
 
 #[derive(Debug, Clone)]
 pub struct TreeNode<T> {
-
     val: T,
 
     degree: usize,
@@ -12,18 +11,19 @@ pub struct TreeNode<T> {
     childrens: Vec<TreeNode<T>>,
 
     parent: Option<Box<TreeNode<T>>>,
-
 }
 
-impl <T> TreeNode<T> where T: Clone {
-
+impl<T> TreeNode<T>
+where
+    T: Clone,
+{
     pub fn new(val: T) -> TreeNode<T> {
-        TreeNode{
+        TreeNode {
             val,
             degree: 0,
             children_num: 0,
             childrens: Vec::new(),
-            parent: None
+            parent: None,
         }
     }
 
@@ -49,7 +49,10 @@ impl <T> TreeNode<T> where T: Clone {
         self.childrens.push(children);
     }
 
-    pub fn contains(&self, val: &T) -> bool where T: PartialEq {
+    pub fn contains(&self, val: &T) -> bool
+    where
+        T: PartialEq,
+    {
         let mut result = false;
         if self.val == *val {
             result = true;
@@ -63,7 +66,10 @@ impl <T> TreeNode<T> where T: Clone {
         result
     }
 
-    pub fn posit(&self, val: &T) -> Option<&TreeNode<T>> where T: PartialEq {
+    pub fn posit(&self, val: &T) -> Option<&TreeNode<T>>
+    where
+        T: PartialEq,
+    {
         if self.val == *val {
             return Some(self);
         }
